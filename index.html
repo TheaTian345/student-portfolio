@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thea | Personal Portfolio</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f8f7f3;color:#344238}
+header{padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:white;flex-wrap:wrap;gap:15px}
+.logo{font-size:25px;font-weight:bold;letter-spacing:3px}
+button{cursor:pointer;border:0;border-radius:20px;padding:9px 15px;background:#e5ece3;color:#344238}
+button:hover{background:#cbd9c8}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:inherit;text-decoration:none;font-size:14px}
+.hero{padding:90px 10%;background:#e8eee6}
+.hero small{letter-spacing:3px;color:#71806d}
+h1{font-size:58px;margin:15px 0}
+.hero p{font-size:18px;line-height:1.8;max-width:650px}
+section{padding:60px 10%}
+h2{font-size:28px;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:white;padding:25px;border-radius:14px;box-shadow:0 3px 15px #0000000a;line-height:1.8}
+.card h3{margin-top:0;color:#596c59}
+.tag{display:inline-block;background:#edf1e9;padding:7px 12px;border-radius:20px;margin:5px;font-size:14px}
+footer{text-align:center;padding:35px;background:#e8eee6}
+@media(max-width:600px){h1{font-size:40px}header{padding:18px 5%}section{padding:45px 7%}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">THEA.</div>
+<nav>
+<a href=" " data-i="nav1">关于我</a >
+<a href="#education" data-i="nav2">教育背景</a >
+<a href="#interests" data-i="nav3">兴趣爱好</a >
+<a href="#experience" data-i="nav4">经历与荣誉</a >
+<a href="#contact" data-i="nav5">联系方式</a >
+</nav>
+<div>
+<button onclick="changeLang('zh')">中文</button>
+<button onclick="changeLang('en')">EN</button>
+<button onclick="changeLang('ko')">한국어</button>
+</div>
+</header>
+
+<div class="hero">
+<small>PERSONAL PORTFOLIO</small>
+<h1>HELLO, I'M THEA.</h1>
+<p data-i="intro">你好，我是 Thea。一名就读于韩国天主教大学的经营学专业四年级学生。我热爱学习、探索新事物，并期待在未来不断提升自己。</p >
+</div>
+
+<section id="about">
+<h2 data-i="aboutTitle">关于我 · About Me</h2>
+<div class="card">
+<h3>Thea</h3>
+<p data-i="aboutText">我是一名经营学专业的大学生，对企业管理、国际商务和市场营销充满兴趣。我喜欢通过学习和实践不断拓展自己的能力。</p >
+</div>
+</section>
+
+<section id="education">
+<h2 data-i="eduTitle">教育背景 · Education</h2>
+<div class="card">
+<h3>The Catholic University of Korea</h3>
+<p data-i="school">韩国天主教大学</p >
+<p data-i="major">专业：经营学（四年级）</p >
+<h3 data-i="courseTitle">喜爱的课程</h3>
+<span class="tag">경영정보론</span>
+<span class="tag">국제경영론</span>
+<span class="tag">마케팅</span>
+</div>
+</section>
+
+<section id="interests">
+<h2 data-i="interestTitle">兴趣爱好 · Interests</h2>
+<div class="grid">
+<div class="card"><h3 data-i="hobby1">书法</h3><p data-i="hobby1d">享受文字与艺术带来的宁静。</p ></div>
+<div class="card"><h3 data-i="hobby2">音乐</h3><p data-i="hobby2d">在音乐中感受灵感与生活。</p ></div>
+<div class="card"><h3 data-i="hobby3">舞蹈</h3><p data-i="hobby3d">通过舞蹈表达自我与热情。</p ></div>
+</div>
+</section>
+
+<section id="experience">
+<h2 data-i="expTitle">经历与荣誉 · Experience</h2>
+<div class="grid">
+<div class="card">
+<h3>2025.07 – 2025.08</h3>
+<p>여울데이터랩</p >
+<p data-i="intern">虚拟实习经历</p >
+</div>
+<div class="card">
+<h3>2017</h3>
+<p data-i="award">财经系竞赛月会计技能大赛三等奖</p >
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 data-i="contactTitle">联系方式 · Contact</h2>
+<div class="card">
+<p>Email: 1140120307@qq.com</p >
+<p>Portfolio: Thea</p >
+</div>
+</section>
+
+<footer>
+<p>© 2026 THEA | PERSONAL PORTFOLIO</p >
+<p data-i="footer">感谢你的访问！</p >
+</footer>
+
+<script>
+const translations={
+zh:{
+nav1:"关于我",nav2:"教育背景",nav3:"兴趣爱好",nav4:"经历与荣誉",nav5:"联系方式",
+intro:"你好，我是 Thea。一名就读于韩国天主教大学的经营学专业四年级学生。我热爱学习、探索新事物，并期待在未来不断提升自己。",
+aboutTitle:"关于我 · About Me",
+aboutText:"我是一名经营学专业的大学生，对企业管理、国际商务和市场营销充满兴趣。我喜欢通过学习和实践不断拓展自己的能力。",
+eduTitle:"教育背景 · Education",school:"韩国天主教大学",major:"专业：经营学（四年级）",
+courseTitle:"喜爱的课程",interestTitle:"兴趣爱好 · Interests",
+hobby1:"书法",hobby1d:"享受文字与艺术带来的宁静。",
+hobby2:"音乐",hobby2d:"在音乐中感受灵感与生活。",
+hobby3:"舞蹈",hobby3d:"通过舞蹈表达自我与热情。",
+expTitle:"经历与荣誉 · Experience",intern:"虚拟实习经历",
+award:"财经系竞赛月会计技能大赛三等奖",
+contactTitle:"联系方式 · Contact",footer:"感谢你的访问！"
+},
+en:{
+nav1:"About",nav2:"Education",nav3:"Interests",nav4:"Experience & Awards",nav5:"Contact",
+intro:"Hello, I'm Thea. I am a fourth-year Business Administration student at The Catholic University of Korea. I enjoy learning, exploring new ideas and continuously improving myself.",
+aboutTitle:"About Me",
+aboutText:"I am a Business Administration student interested in business management, international business and marketing. I enjoy developing my abilities through learning and practical experience.",
+eduTitle:"Education",school:"The Catholic University of Korea",major:"Major: Business Administration (Senior)",
+courseTitle:"Favorite Courses",interestTitle:"My Interests",
+hobby1:"Calligraphy",hobby1d:"Finding peace through words and art.",
+hobby2:"Music",hobby2d:"Finding inspiration and joy in music.",
+hobby3:"Dance",hobby3d:"Expressing myself through movement.",
+expTitle:"Experience & Awards",intern:"Virtual Internship",
+award:"Third Prize, Accounting Skills Competition, Department of Economics",
+contactTitle:"Contact",footer:"Thank you for visiting!"
+},
+ko:{
+nav1:"소개",nav2:"학력",nav3:"관심사",nav4:"경력 및 수상",nav5:"연락처",
+intro:"안녕하세요, 저는 Thea입니다. 가톨릭대학교 경영학과 4학년 학생입니다. 새로운 것을 배우고 탐구하며 끊임없이 성장하는 것을 좋아합니다.",
+aboutTitle:"자기소개",
+aboutText:"저는 경영학을 전공하며 기업 경영, 국제경영 및 마케팅에 관심이 많습니다. 학습과 실무 경험을 통해 역량을 발전시키고 있습니다.",
+eduTitle:"학력",school:"가톨릭대학교",major:"전공: 경영학과 4학년",
+courseTitle:"좋아하는 과목",interestTitle:"관심사",
+hobby1:"서예",hobby1d:"글과 예술을 통해 평온함을 느낍니다.",
+hobby2:"음악",hobby2d:"음악을 통해 영감과 즐거움을 얻습니다.",
+hobby3:"댄스",hobby3d:"춤으로 자신을 표현합니다.",
+expTitle:"경력 및 수상",intern:"가상 인턴십",
+award:"2017년 회계 기술 경진대회 3등상",
+contactTitle:"연락처",footer:"방문해 주셔서 감사합니다!"
+}
+};
+function changeLang(lang){
+document.documentElement.lang=lang==="zh"?"zh-CN":lang;
+document.querySelectorAll("[data-i]").forEach(el=>{
+const key=el.getAttribute("data-i");
+if(translations[lang][key])el.textContent=translations[lang][key];
+});
+}
+</script>
+</body>
+</html>
