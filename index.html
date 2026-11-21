@@ -1,167 +1,637 @@
-
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thea | Personal Portfolio</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f8f7f3;color:#344238}
-header{padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:white;flex-wrap:wrap;gap:15px}
-.logo{font-size:25px;font-weight:bold;letter-spacing:3px}
-button{cursor:pointer;border:0;border-radius:20px;padding:9px 15px;background:#e5ece3;color:#344238}
-button:hover{background:#cbd9c8}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{color:inherit;text-decoration:none;font-size:14px}
-.hero{padding:90px 10%;background:#e8eee6}
-.hero small{letter-spacing:3px;color:#71806d}
-h1{font-size:58px;margin:15px 0}
-.hero p{font-size:18px;line-height:1.8;max-width:650px}
-section{padding:60px 10%}
-h2{font-size:28px;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:white;padding:25px;border-radius:14px;box-shadow:0 3px 15px #0000000a;line-height:1.8}
-.card h3{margin-top:0;color:#596c59}
-.tag{display:inline-block;background:#edf1e9;padding:7px 12px;border-radius:20px;margin:5px;font-size:14px}
-footer{text-align:center;padding:35px;background:#e8eee6}
-@media(max-width:600px){h1{font-size:40px}header{padding:18px 5%}section{padding:45px 7%}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="가톨릭대학교 경영학과 Thea의 가상 포트폴리오">
+  <title>Thea | Portfolio</title>
+  <style>
+    :root {
+      --cream: #f5f1e7;
+      --paper: #fffdf7;
+      --green: #173f32;
+      --green-2: #285b49;
+      --sage: #dce5d9;
+      --ink: #24332c;
+      --muted: #718078;
+      --line: #dce1d8;
+      --accent: #c18a55;
+      --shadow: 0 18px 50px rgba(23, 63, 50, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0; background: var(--cream); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20; background: rgba(245,241,231,.96);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: var(--green); font-family: Georgia, serif; font-size: 1.25rem; font-weight: 700; letter-spacing: .04em; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: #52645b; font-size: .92rem; font-weight: 600; }
+    .nav-links a:hover, .nav-links a:focus { color: var(--accent); }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 9px; padding: 8px 12px; color: var(--green); background: var(--paper); }
+    .language-toggle { border: 1px solid var(--green); border-radius: 999px; padding: 8px 14px; color: var(--green); background: var(--paper); font-size: .84rem; font-weight: 800; white-space: nowrap; }
+    .language-toggle:hover, .language-toggle:focus-visible { background: var(--sage); }
+    .hero { padding: 82px 0 76px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center; }
+    .eyebrow { color: var(--green-2); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { color: var(--green); font-size: clamp(2.8rem, 6vw, 5.3rem); line-height: 1.12; letter-spacing: -.06em; margin: 18px 0; }
+    h1 span { color: var(--accent); }
+    .hero-copy { max-width: 610px; color: #59685f; font-size: 1.08rem; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 12px 21px; font-weight: 700; border: 1px solid var(--green); }
+    .btn.primary { background: var(--green); color: white; }
+    .btn.secondary { color: var(--green); background: transparent; }
+    .profile-card { background: var(--green); color: #f8f5eb; border-radius: 24px; padding: 34px; box-shadow: var(--shadow); }
+    .profile-mark { width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; background: #e4e8d8; color: var(--green); font: 700 1.7rem Georgia, serif; margin-bottom: 28px; }
+    .profile-card h2 { font-size: 1.55rem; margin: 0 0 6px; }
+    .profile-card p { color: #d0dbd1; margin: 0; }
+    .profile-meta { border-top: 1px solid rgba(255,255,255,.2); margin-top: 25px; padding-top: 20px; display: grid; gap: 10px; font-size: .9rem; }
+    .profile-meta span { color: #b8c9bd; display: inline-block; width: 78px; }
+    section { padding: 74px 0; }
+    section:nth-of-type(even) { background: rgba(255,253,247,.55); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 32px; }
+    .section-head h2 { color: var(--green); font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -.04em; margin: 7px 0 0; }
+    .section-head p { color: var(--muted); margin: 0; max-width: 420px; }
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr); gap: 22px; align-items: stretch; }
+    .about-copy { display: grid; gap: 18px; }
+    .scene-card { background: #edf0e5; border: 1px solid var(--line); border-radius: 20px; padding: 18px; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+    .scene-motion {
+      width: 100%; max-width: 520px; margin: 0 auto; display: block;
+      transform: translate3d(0, 0, 0); transform-origin: center center;
+      will-change: transform; backface-visibility: hidden;
+    }
+    .scene-motion svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .scene-controls { display: flex; justify-content: flex-end; margin: 8px 4px 0; }
+    .motion-toggle {
+      border: 1px solid #bdcbbd; border-radius: 999px; padding: 7px 12px;
+      background: #fffdf7; color: var(--green); font-size: .8rem; font-weight: 700;
+    }
+    .motion-toggle:hover:not(:disabled), .motion-toggle:focus-visible { background: #e2eadd; }
+    .motion-toggle:disabled { cursor: not-allowed; opacity: .7; }
+    .scene-caption { color: #617167; font-size: .88rem; line-height: 1.7; margin: 10px 5px 2px; }
+    .scene-caption strong { color: var(--green); }
+    .paper-card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 27px; }
+    .paper-card h3 { color: var(--green); margin: 0 0 10px; font-size: 1.08rem; }
+    .paper-card p { margin: 0; color: #637168; }
+    .quote { font: 1.25rem/1.55 Georgia, serif; color: var(--green); }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .project-card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 25px; display: flex; flex-direction: column; min-height: 300px; }
+    .project-no { color: var(--accent); font: 700 1rem Georgia, serif; }
+    .project-card h3 { color: var(--green); font-size: 1.2rem; margin: 14px 0 9px; }
+    .project-card p { color: #647168; margin: 0 0 20px; font-size: .94rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; margin-bottom: 20px; }
+    .tag { background: var(--sage); color: var(--green); padding: 5px 10px; border-radius: 99px; font-size: .75rem; font-weight: 700; }
+    .detail-btn { align-self: flex-start; background: transparent; border: 0; border-bottom: 1px solid var(--green); padding: 3px 0; color: var(--green); font-weight: 800; }
+    .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    .skill { margin: 17px 0; }
+    .skill-top { display: flex; justify-content: space-between; font-weight: 700; color: var(--green); font-size: .92rem; }
+    .track { height: 8px; background: #e4e8df; border-radius: 99px; margin-top: 8px; overflow: hidden; }
+    .fill { height: 100%; background: var(--green-2); border-radius: 99px; }
+    .skill-note { color: var(--muted); font-size: .85rem; margin-top: 18px; }
+    .timeline { border-left: 2px solid #cbd7cc; margin-left: 8px; padding-left: 25px; display: grid; gap: 25px; }
+    .event { position: relative; }
+    .event::before { content: ""; position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); left: -32px; top: 8px; }
+    .event time { color: var(--accent); font-size: .82rem; font-weight: 800; }
+    .event h3 { margin: 3px 0 4px; color: var(--green); font-size: 1.04rem; }
+    .event p { margin: 0; color: #647168; font-size: .92rem; }
+    .contact { background: var(--green); color: #f8f5eb; }
+    .contact .section-head h2, .contact .eyebrow { color: #f8f5eb; }
+    .contact .section-head p { color: #c6d3c8; }
+    .contact-panel { display: flex; justify-content: space-between; align-items: center; gap: 24px; border-top: 1px solid rgba(255,255,255,.22); padding-top: 26px; }
+    .email { font: 1.5rem Georgia, serif; color: #f5d9b8; overflow-wrap: anywhere; }
+    .contact .btn { color: var(--green); background: #f8f5eb; border-color: #f8f5eb; }
+    footer { padding: 24px 0; color: #839087; font-size: .8rem; text-align: center; }
+    .fiction-note { display: inline-block; margin-top: 18px; padding: 7px 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 99px; color: #d7e0d7; font-size: .78rem; }
+    .modal { position: fixed; inset: 0; z-index: 50; background: rgba(13,31,24,.62); display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal.open { display: flex; }
+    .modal-box { width: min(620px, 100%); max-height: 85vh; overflow: auto; background: var(--paper); border-radius: 20px; padding: 32px; position: relative; }
+    .modal-box h2 { color: var(--green); margin: 8px 42px 12px 0; }
+    .modal-box p, .modal-box li { color: #5e6c63; }
+    .modal-close { position: absolute; right: 18px; top: 18px; border: 1px solid var(--line); background: white; color: var(--green); border-radius: 50%; width: 36px; height: 36px; font-size: 1.1rem; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 34px, 600px); }
+      .nav { min-height: 66px; gap: 10px; flex-wrap: wrap; padding: 10px 0; }
+      .brand { margin-right: auto; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 65px; left: 0; right: 0; background: var(--cream); padding: 18px 24px 22px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 15px; }
+      .nav-links.open { display: flex; }
+      .hero { grid-template-columns: 1fr; padding: 58px 0; gap: 30px; }
+      .profile-card { max-width: 480px; }
+      section { padding: 58px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 10px; }
+      .about-grid, .skills-layout { grid-template-columns: 1fr; }
+      .scene-card { order: 2; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card { min-height: auto; }
+      .contact-panel { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Thea 홈">THEA / PORTFOLIO</a>
+      <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">中文</button>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">메뉴 ☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="주요 메뉴">
+        <a href="#about">소개</a><a href="#projects">프로젝트</a><a href="#skills">역량</a><a href="#activities">활동 기록</a><a href="#contact">연락처</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-<div class="logo">THEA.</div>
-<nav>
-<a href=" " data-i="nav1">关于我</a >
-<a href="#education" data-i="nav2">教育背景</a >
-<a href="#interests" data-i="nav3">兴趣爱好</a >
-<a href="#experience" data-i="nav4">经历与荣誉</a >
-<a href="#contact" data-i="nav5">联系方式</a >
-</nav>
-<div>
-<button onclick="changeLang('zh')">中文</button>
-<button onclick="changeLang('en')">EN</button>
-<button onclick="changeLang('ko')">한국어</button>
-</div>
-</header>
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Business × Data × Insight</div>
+        <h1>데이터로 발견하고,<br><span>실행으로 연결하는</span><br>Thea입니다.</h1>
+        <p class="hero-copy">비즈니스의 작은 질문을 데이터로 구체화하고, 팀이 활용할 수 있는 해결책으로 만드는 일에 관심이 있습니다. 분석과 커뮤니케이션을 함께 갖춘 경영정보 인재로 성장하고 있습니다.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">프로젝트 보기</a>
+          <a class="btn secondary" href="#contact">연락하기</a>
+        </div>
+      </div>
+      <aside class="profile-card" aria-label="프로필 요약">
+        <div class="profile-mark">T</div>
+        <h2>Thea</h2>
+        <p>The Catholic University of Korea · 경영학과 4학년</p>
+        <div class="profile-meta">
+          <div><span>전공·학년</span> 경영학과 · 4학년</div>
+          <div><span>관심 분야</span> 데이터 분석 · 서비스 기획</div>
+          <div><span>취미</span> 서예 · 음악 · 춤</div>
+          <div><span>좋아하는 과목</span> 경영정보론 · 국제경영론 · 마케팅</div>
+          <div><span>지원 기업</span> 모아빛에너지</div>
+          <div><span>인턴 경험</span> 여울데이터랩</div>
+        </div>
+        <div class="fiction-note">본 포트폴리오의 인물 및 이력은 모두 가상입니다.</div>
+      </aside>
+    </div>
 
-<div class="hero">
-<small>PERSONAL PORTFOLIO</small>
-<h1>HELLO, I'M THEA.</h1>
-<p data-i="intro">你好，我是 Thea。一名就读于韩国天主教大学的经营学专业四年级学生。我热爱学习、探索新事物，并期待在未来不断提升自己。</p >
-</div>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">01 / About me</div><h2>소개</h2></div><p>기술과 비즈니스 사이에서 의미 있는 연결을 만드는 사람</p></div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <article class="paper-card">
+              <h3>안녕하세요, Thea입니다.</h3>
+              <p>The Catholic University of Korea 경영학과 4학년으로, 경영 프로세스와 데이터 분석을 함께 공부하고 있습니다. 문제를 정의할 때는 사용자의 관점을 먼저 살피고, 해결책을 제안할 때는 데이터와 실행 가능성을 기준으로 판단합니다.</p>
+            </article>
+            <article class="paper-card">
+              <p class="quote">“좋은 분석은 숫자를 설명하는 데서 끝나지 않고, 더 나은 선택을 돕습니다.”</p>
+              <p style="margin-top:14px">모아빛에너지의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.</p>
+            </article>
+          </div>
+          <aside class="scene-card" aria-label="데이터 작업실 일러스트와 설명">
+            <div class="scene-motion">
+              <svg viewBox="0 0 520 390" role="img" aria-labelledby="studioTitle studioDesc" xmlns="http://www.w3.org/2000/svg">
+                <title id="studioTitle">Thea의 아늑한 데이터 작업실</title>
+                <desc id="studioDesc">둥근 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.</desc>
+                <defs>
+                  <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8f3e7"/><stop offset="1" stop-color="#e8eddf"/></linearGradient>
+                  <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c99563"/><stop offset="1" stop-color="#a96f45"/></linearGradient>
+                  <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#244d40"/><stop offset="1" stop-color="#142f29"/></linearGradient>
+                  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#244638" flood-opacity=".16"/></filter>
+                </defs>
+                <!-- soft studio backdrop -->
+                <rect x="12" y="10" width="496" height="360" rx="28" fill="url(#wall)"/>
+                <circle cx="425" cy="76" r="34" fill="#e2e8d9"/>
+                <path d="M42 315 Q260 280 478 315 L478 350 Q260 372 42 350Z" fill="#dce5d8" opacity=".7"/>
+                <!-- wall note -->
+                <rect x="36" y="38" width="86" height="58" rx="10" fill="#fffdf7" stroke="#d8dfd2"/>
+                <path d="M51 55h55M51 67h37M51 79h45" stroke="#b5c6b6" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="105" cy="48" r="5" fill="#c18a55"/>
+                <!-- plant pot and leaves -->
+                <g filter="url(#softShadow)">
+                  <path d="M55 247h55l-7 55H63Z" fill="#c88762"/>
+                  <path d="M61 247h43" stroke="#a96f45" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M83 247C72 213 49 205 48 181C72 184 88 207 86 232C91 198 111 182 132 185C127 211 108 231 88 244" fill="#6f9876"/>
+                  <path d="M81 241C58 224 57 202 66 190C83 203 89 222 84 241M89 239C95 211 113 200 126 203C119 223 104 237 89 244" fill="#8eae85"/>
+                  <path d="M84 247V177" stroke="#53785e" stroke-width="4" stroke-linecap="round"/>
+                </g>
+                <!-- dual monitors -->
+                <g filter="url(#softShadow)">
+                  <rect x="145" y="88" width="135" height="102" rx="10" fill="#304d43"/>
+                  <rect x="153" y="96" width="119" height="85" rx="5" fill="url(#screen)"/>
+                  <rect x="292" y="78" width="145" height="112" rx="10" fill="#304d43"/>
+                  <rect x="300" y="86" width="129" height="95" rx="5" fill="url(#screen)"/>
+                </g>
+                <path d="M212 190v17m-22 0h44M365 190v17m-23 0h46" stroke="#8c9b8e" stroke-width="6" stroke-linecap="round"/>
+                <!-- monitor one: chart -->
+                <path d="M166 164V110h92" fill="none" stroke="#8eaa98" stroke-width="1.5" opacity=".8"/>
+                <path d="M169 154l18-15 17 7 19-24 18 8 16-16" fill="none" stroke="#e5c18e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="223" cy="122" r="3" fill="#f3d7a9"/>
+                <path d="M169 169h28m7 0h20m7 0h26" stroke="#769586" stroke-width="3" stroke-linecap="round"/>
+                <!-- monitor two: dashboard -->
+                <rect x="313" y="99" width="47" height="28" rx="4" fill="#6d9b7b"/>
+                <rect x="367" y="99" width="48" height="28" rx="4" fill="#d4b27e"/>
+                <path d="M317 160v-17h13v17m8 0v-25h13v25m8 0v-11h13v11" fill="#7ea98a"/>
+                <path d="M374 151q14-20 27-5t13-10" fill="none" stroke="#e5c18e" stroke-width="3" stroke-linecap="round"/>
+                <!-- desk -->
+                <g filter="url(#softShadow)">
+                  <path d="M38 226Q260 214 482 226L470 250Q260 264 50 250Z" fill="url(#wood)"/>
+                  <path d="M66 250h13v91H66zm373 0h13v91h-13z" fill="#96613f"/>
+                  <path d="M49 250Q260 264 471 250" fill="none" stroke="#e0b17e" stroke-width="3"/>
+                </g>
+                <!-- rounded character -->
+                <g filter="url(#softShadow)">
+                  <ellipse cx="274" cy="238" rx="43" ry="12" fill="#6b8b75" opacity=".22"/>
+                  <path d="M237 218q0-48 38-48t38 48v12h-76Z" fill="#e9b98e"/>
+                  <circle cx="275" cy="180" r="38" fill="#f1c9a2"/>
+                  <path d="M240 176q2-39 37-39 31 0 36 32-16-12-31-11-22 2-42 18Z" fill="#526b58"/>
+                  <circle cx="262" cy="181" r="3.5" fill="#34483d"/><circle cx="288" cy="181" r="3.5" fill="#34483d"/>
+                  <path d="M269 194q7 7 14 0" fill="none" stroke="#b87561" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="250" cy="190" r="6" fill="#e9a18f" opacity=".7"/><circle cx="300" cy="190" r="6" fill="#e9a18f" opacity=".7"/>
+                  <path d="M239 221q-15 4-22 17m95-17q15 4 22 17" stroke="#e9b98e" stroke-width="12" stroke-linecap="round"/>
+                  <path d="M251 225q23 13 47 0" fill="none" stroke="#fff0d9" stroke-width="5" stroke-linecap="round"/>
+                </g>
+                <!-- keyboard -->
+                <path d="M207 240l112-2 17 14-111 3Z" fill="#e5e8dd" stroke="#c4cec2" stroke-width="2"/>
+                <path d="M222 245l82-1m-74 6h82" stroke="#aab9aa" stroke-width="2" stroke-linecap="round"/>
+                <!-- mug -->
+                <g filter="url(#softShadow)">
+                  <path d="M377 219h48l-5 39q-19 13-38 0Z" fill="#f8f1df" stroke="#c9d2c4" stroke-width="2"/>
+                  <path d="M425 228q25-5 19 15-4 12-22 8" fill="none" stroke="#f8f1df" stroke-width="8"/>
+                  <path d="M389 231h25" stroke="#c18a55" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M389 240h18" stroke="#c18a55" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+                </g>
+                <!-- little data cards -->
+                <rect x="119" y="278" width="83" height="39" rx="8" fill="#fffdf7" stroke="#d7dfd4"/>
+                <path d="M132 302v-10h8v10m6 0v-17h8v17m6 0v-7h8v7" fill="#8cab8f"/>
+                <path d="M174 291h17m-17 7h12" stroke="#d0b07f" stroke-width="3" stroke-linecap="round"/>
+                <path d="M345 291h17m-17 8h24" stroke="#b4c5b4" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="358" cy="279" r="5" fill="#c18a55"/>
+              </svg>
+            </div>
+            <div class="scene-controls">
+              <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false">움직임 일시정지</button>
+            </div>
+            <p class="scene-caption"><strong>작은 데이터 작업실</strong><br>듀얼 모니터는 분석과 시각화를, 둥근 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-<section id="about">
-<h2 data-i="aboutTitle">关于我 · About Me</h2>
-<div class="card">
-<h3>Thea</h3>
-<p data-i="aboutText">我是一名经营学专业的大学生，对企业管理、国际商务和市场营销充满兴趣。我喜欢通过学习和实践不断拓展自己的能力。</p >
-</div>
-</section>
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">02 / Selected work</div><h2>프로젝트</h2></div><p>문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트</p></div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-no">PROJECT 01</div><h3>캠퍼스 에너지 사용량 분석</h3>
+            <p>건물별 전력 사용 패턴을 비교해 피크 시간대와 절감 가능 구간을 찾고, 에너지 절약 대시보드의 핵심 지표를 설계했습니다.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">데이터 시각화</span><span class="tag">에너지</span></div>
+            <button class="detail-btn" data-project="energy">상세 보기 →</button>
+          </article>
+          <article class="project-card">
+            <div class="project-no">PROJECT 02</div><h3>친환경 구독 서비스 기획</h3>
+            <p>친환경 생활용품 구독 서비스의 고객 여정을 분석하고, 설문 결과를 바탕으로 재구독률 개선 아이디어를 제안했습니다.</p>
+            <div class="tags"><span class="tag">서비스 기획</span><span class="tag">SQL</span><span class="tag">고객 분석</span></div>
+            <button class="detail-btn" data-project="service">상세 보기 →</button>
+          </article>
+          <article class="project-card">
+            <div class="project-no">PROJECT 03</div><h3>지역 태양광 입지 탐색</h3>
+            <p>공공 데이터를 활용해 지역별 일사량·건물 밀도·접근성을 비교하고, 후보 지역을 검토하는 분석 프레임워크를 구성했습니다.</p>
+            <div class="tags"><span class="tag">공공 데이터</span><span class="tag">Excel</span><span class="tag">리서치</span></div>
+            <button class="detail-btn" data-project="solar">상세 보기 →</button>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section id="education">
-<h2 data-i="eduTitle">教育背景 · Education</h2>
-<div class="card">
-<h3>The Catholic University of Korea</h3>
-<p data-i="school">韩国天主教大学</p >
-<p data-i="major">专业：经营学（四年级）</p >
-<h3 data-i="courseTitle">喜爱的课程</h3>
-<span class="tag">경영정보론</span>
-<span class="tag">국제경영론</span>
-<span class="tag">마케팅</span>
-</div>
-</section>
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">03 / Capabilities</div><h2>역량</h2></div><p>학습 및 가상 프로젝트를 통해 다져 온 업무 기반 역량</p></div>
+        <div class="skills-layout">
+          <div class="paper-card">
+            <h3>데이터·도구</h3>
+            <div class="skill"><div class="skill-top"><span>Excel / 스프레드시트</span><span>상</span></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>SQL</span><span>중상</span></div><div class="track"><div class="fill" style="width:72%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>Python (Pandas)</span><span>중</span></div><div class="track"><div class="fill" style="width:65%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>데이터 시각화</span><span>중상</span></div><div class="track"><div class="fill" style="width:74%"></div></div></div>
+          </div>
+          <div class="paper-card">
+            <h3>협업·비즈니스</h3>
+            <div class="skill"><div class="skill-top"><span>문제 정의 및 구조화</span><span>강점</span></div><div class="track"><div class="fill" style="width:86%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>리서치 및 인사이트 도출</span><span>강점</span></div><div class="track"><div class="fill" style="width:82%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>문서 작성·발표</span><span>중상</span></div><div class="track"><div class="fill" style="width:78%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>팀 커뮤니케이션</span><span>강점</span></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+            <p class="skill-note">※ 숙련도 표시는 포트폴리오 구성을 위한 가상 예시이며, 공인 평가 결과가 아닙니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="interests">
-<h2 data-i="interestTitle">兴趣爱好 · Interests</h2>
-<div class="grid">
-<div class="card"><h3 data-i="hobby1">书法</h3><p data-i="hobby1d">享受文字与艺术带来的宁静。</p ></div>
-<div class="card"><h3 data-i="hobby2">音乐</h3><p data-i="hobby2d">在音乐中感受灵感与生活。</p ></div>
-<div class="card"><h3 data-i="hobby3">舞蹈</h3><p data-i="hobby3d">通过舞蹈表达自我与热情。</p ></div>
-</div>
-</section>
+    <section id="activities">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">04 / Activities</div><h2>활동 기록</h2></div><p>배움과 협업을 통해 관심 분야를 넓혀 온 과정</p></div>
+        <div class="timeline">
+          <article class="event"><time>2025.07 – 2025.08</time><h3>여울데이터랩 · 데이터 분석 인턴</h3><p>데이터 정제, 주간 리포트 작성, 대시보드 지표 검토를 보조한 가상 인턴 경험</p></article>
+          <article class="event"><time>2017</time><h3>재경계열 경진월 회계기능대회 · 3등</h3><p>전문대학 재학 당시 수상한 회계 기능 대회 3등상</p></article>
+        </div>
+      </div>
+    </section>
 
-<section id="experience">
-<h2 data-i="expTitle">经历与荣誉 · Experience</h2>
-<div class="grid">
-<div class="card">
-<h3>2025.07 – 2025.08</h3>
-<p>여울데이터랩</p >
-<p data-i="intern">虚拟实习经历</p >
-</div>
-<div class="card">
-<h3>2017</h3>
-<p data-i="award">财经系竞赛月会计技能大赛三等奖</p >
-</div>
-</div>
-</section>
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">05 / Contact</div><h2>함께 성장할 기회를 기다립니다.</h2></div><p>데이터와 비즈니스에 관한 대화를 나누고 싶습니다.</p></div>
+        <div class="contact-panel">
+          <div><div style="font-size:.82rem;color:#c6d3c8;margin-bottom:7px">EMAIL</div><a class="email" href="mailto:1140120307@qq.com">1140120307@qq.com</a></div>
+          <a class="btn" href="mailto:1140120307@qq.com">이메일 보내기 ↗</a>
+        </div>
+        <div class="fiction-note">Thea의 학력·수상·인턴십·프로젝트 등 인물 및 이력 정보는 창작된 가상 설정입니다.</div>
+      </div>
+    </section>
+  </main>
 
-<section id="contact">
-<h2 data-i="contactTitle">联系方式 · Contact</h2>
-<div class="card">
-<p>Email: 1140120307@qq.com</p >
-<p>Portfolio: Thea</p >
-</div>
-</section>
+  <footer><div class="wrap">© 2025 Thea · Fictional Portfolio · Made with care</div></footer>
 
-<footer>
-<p>© 2026 THEA | PERSONAL PORTFOLIO</p >
-<p data-i="footer">感谢你的访问！</p >
-</footer>
+  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="닫기">×</button>
+      <div class="eyebrow" id="modalEyebrow">PROJECT DETAIL</div>
+      <h2 id="modalTitle"></h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
 
-<script>
-const translations={
-zh:{
-nav1:"关于我",nav2:"教育背景",nav3:"兴趣爱好",nav4:"经历与荣誉",nav5:"联系方式",
-intro:"你好，我是 Thea。一名就读于韩国天主教大学的经营学专业四年级学生。我热爱学习、探索新事物，并期待在未来不断提升自己。",
-aboutTitle:"关于我 · About Me",
-aboutText:"我是一名经营学专业的大学生，对企业管理、国际商务和市场营销充满兴趣。我喜欢通过学习和实践不断拓展自己的能力。",
-eduTitle:"教育背景 · Education",school:"韩国天主教大学",major:"专业：经营学（四年级）",
-courseTitle:"喜爱的课程",interestTitle:"兴趣爱好 · Interests",
-hobby1:"书法",hobby1d:"享受文字与艺术带来的宁静。",
-hobby2:"音乐",hobby2d:"在音乐中感受灵感与生活。",
-hobby3:"舞蹈",hobby3d:"通过舞蹈表达自我与热情。",
-expTitle:"经历与荣誉 · Experience",intern:"虚拟实习经历",
-award:"财经系竞赛月会计技能大赛三等奖",
-contactTitle:"联系方式 · Contact",footer:"感谢你的访问！"
-},
-en:{
-nav1:"About",nav2:"Education",nav3:"Interests",nav4:"Experience & Awards",nav5:"Contact",
-intro:"Hello, I'm Thea. I am a fourth-year Business Administration student at The Catholic University of Korea. I enjoy learning, exploring new ideas and continuously improving myself.",
-aboutTitle:"About Me",
-aboutText:"I am a Business Administration student interested in business management, international business and marketing. I enjoy developing my abilities through learning and practical experience.",
-eduTitle:"Education",school:"The Catholic University of Korea",major:"Major: Business Administration (Senior)",
-courseTitle:"Favorite Courses",interestTitle:"My Interests",
-hobby1:"Calligraphy",hobby1d:"Finding peace through words and art.",
-hobby2:"Music",hobby2d:"Finding inspiration and joy in music.",
-hobby3:"Dance",hobby3d:"Expressing myself through movement.",
-expTitle:"Experience & Awards",intern:"Virtual Internship",
-award:"Third Prize, Accounting Skills Competition, Department of Economics",
-contactTitle:"Contact",footer:"Thank you for visiting!"
-},
-ko:{
-nav1:"소개",nav2:"학력",nav3:"관심사",nav4:"경력 및 수상",nav5:"연락처",
-intro:"안녕하세요, 저는 Thea입니다. 가톨릭대학교 경영학과 4학년 학생입니다. 새로운 것을 배우고 탐구하며 끊임없이 성장하는 것을 좋아합니다.",
-aboutTitle:"자기소개",
-aboutText:"저는 경영학을 전공하며 기업 경영, 국제경영 및 마케팅에 관심이 많습니다. 학습과 실무 경험을 통해 역량을 발전시키고 있습니다.",
-eduTitle:"학력",school:"가톨릭대학교",major:"전공: 경영학과 4학년",
-courseTitle:"좋아하는 과목",interestTitle:"관심사",
-hobby1:"서예",hobby1d:"글과 예술을 통해 평온함을 느낍니다.",
-hobby2:"음악",hobby2d:"음악을 통해 영감과 즐거움을 얻습니다.",
-hobby3:"댄스",hobby3d:"춤으로 자신을 표현합니다.",
-expTitle:"경력 및 수상",intern:"가상 인턴십",
-award:"2017년 회계 기술 경진대회 3등상",
-contactTitle:"연락처",footer:"방문해 주셔서 감사합니다!"
-}
-};
-function changeLang(lang){
-document.documentElement.lang=lang==="zh"?"zh-CN":lang;
-document.querySelectorAll("[data-i]").forEach(el=>{
-const key=el.getAttribute("data-i");
-if(translations[lang][key])el.textContent=translations[lang][key];
-});
-}
-</script>
+  <script>
+
+    // Bilingual UI: Korean is the default; the toggle switches all visible copy.
+    const translations = {
+      '메뉴 ☰':'菜单 ☰','닫기 ×':'关闭 ×','소개':'自我介绍','프로젝트':'项目','역량':'能力','활동 기록':'活动经历','연락처':'联系方式',
+      '데이터로 발견하고,':'用数据发现问题，','실행으로 연결하는':'并将洞察转化为行动的','Thea입니다.':'我是Thea。',
+      '비즈니스의 작은 질문을 데이터로 구체화하고, 팀이 활용할 수 있는 해결책으로 만드는 일에 관심이 있습니다. 분석과 커뮤니케이션을 함께 갖춘 경영정보 인재로 성장하고 있습니다.':'我热衷于将商业中的细小问题转化为数据问题，并提出团队能够落地的解决方案。我正努力成长为兼具分析能力与沟通能力的经营信息人才。',
+      '프로젝트 보기':'查看项目','연락하기':'联系我','Thea':'Thea','The Catholic University of Korea · 경영학과 4학년':'韩国加图立大学 · 经营学专业四年级','The Catholic University of Korea · 경영학과':'韩国加图立大学 · 经营学专业','관심 분야':'关注领域','데이터 분석 · 서비스 기획':'数据分析 · 服务策划','지원 기업':'目标企业','모아빛에너지':'Moa빛能源','인턴 경험':'实习经历','여울데이터랩':'汝울数据实验室','전공·학년':'专业·年级','경영학과 · 4학년':'经营学专业 · 四年级','취미':'兴趣爱好','서예 · 음악 · 춤':'书法 · 音乐 · 舞蹈','좋아하는 과목':'喜爱的课程','경영정보론 · 국제경영론 · 마케팅':'经营信息论 · 国际经营论 · 市场营销',
+      '본 포트폴리오의 인물 및 이력은 모두 가상입니다.':'本作品集中的人物及经历均为虚构设定。','기술과 비즈니스 사이에서 의미 있는 연결을 만드는 사람':'致力于连接技术与商业，创造实际价值','안녕하세요, Thea입니다.':'你好，我是Thea。',
+      'The Catholic University of Korea 경영학과 4학년으로, 경영 프로세스와 데이터 분석을 함께 공부하고 있습니다. 문제를 정의할 때는 사용자의 관점을 먼저 살피고, 해결책을 제안할 때는 데이터와 실행 가능성을 기준으로 판단합니다.':'我目前就读于韩国加图立大学经营学专业四年级，同时学习经营流程与数据分析。定义问题时，我会优先考虑用户视角；提出解决方案时，则以数据和可执行性作为判断依据。',
+      '“좋은 분석은 숫자를 설명하는 데서 끝나지 않고, 더 나은 선택을 돕습니다.”':'“优秀的分析不止于解释数字，更要帮助人们做出更好的选择。”',
+      '모아빛에너지의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.':'我希望为Moa빛能源的可持续能源服务与数据驱动的运营创新贡献力量。我能够快速学习新工具，并将所学转化为团队成果。',
+      'Thea의 아늑한 데이터 작업실':'Thea温馨的数据工作室','둥근 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.':'圆润可爱的角色坐在木桌前，通过双显示器查看数据，旁边摆放着绿植和马克杯。',
+      '움직임 일시정지':'暂停动画','움직임 재생':'播放动画','시스템 설정으로 모션 제한됨':'系统设置已限制动画','작은 데이터 작업실':'小小数据工作室',
+      '듀얼 모니터는 분석과 시각화를, 둥근 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.':'双显示器象征数据分析与可视化，圆润的角色代表好奇心与持续学习。木桌、绿植和马克杯则体现了Thea在平静温暖的环境中，将想法付诸实践的工作方式。',
+      '문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트':'从问题定义、分析到方案提出的三个虚构项目','캠퍼스 에너지 사용량 분석':'校园能源使用量分析','건물별 전력 사용 패턴을 비교해 피크 시간대와 절감 가능 구간을 찾고, 에너지 절약 대시보드의 핵심 지표를 설계했습니다.':'比较各栋建筑的用电模式，找出用电高峰与节能空间，并设计能源节约仪表盘的核心指标。',
+      '데이터 시각화':'数据可视化','에너지':'能源','상세 보기 →':'查看详情 →','친환경 구독 서비스 기획':'环保订阅服务策划','친환경 생활용품 구독 서비스의 고객 여정을 분석하고, 설문 결과를 바탕으로 재구독률 개선 아이디어를 제안했습니다.':'分析环保生活用品订阅服务的客户旅程，并根据问卷结果提出提高续订率的建议。','서비스 기획':'服务策划','고객 분석':'客户分析',
+      '지역 태양광 입지 탐색':'区域太阳能选址研究','공공 데이터를 활용해 지역별 일사량·건물 밀도·접근성을 비교하고, 후보 지역을 검토하는 분석 프레임워크를 구성했습니다.':'利用公共数据比较各地区日照量、建筑密度与可达性，建立候选区域评估分析框架。','공공 데이터':'公共数据','리서치':'调研',
+      '학습 및 가상 프로젝트를 통해 다져 온 업무 기반 역량':'通过学习与模拟项目积累的基础业务能力','데이터·도구':'数据与工具','상':'高级','중상':'中高级','중':'中级','협업·비즈니스':'协作与商业','문제 정의 및 구조화':'问题定义与结构化','강점':'优势','리서치 및 인사이트 도출':'调研与洞察提炼','문서 작성·발표':'文档撰写与演示','팀 커뮤니케이션':'团队沟通','※ 숙련도 표시는 포트폴리오 구성을 위한 가상 예시이며, 공인 평가 결과가 아닙니다.':'※ 技能熟练度为作品集展示用的虚构示例，并非官方测评结果。',
+      '배움과 협업을 통해 관심 분야를 넓혀 온 과정':'通过学习与协作不断拓展兴趣领域的历程','재경계열 경진월 회계기능대회 · 3등':'财经系竞赛月会计技能大赛 · 三等奖','전문대학 재학 당시 수상한 회계 기능 대회 3등상':'专科在读期间获得会计技能大赛三等奖','여울데이터랩 · 데이터 분석 인턴':'汝울数据实验室 · 数据分析实习生','데이터 정제, 주간 리포트 작성, 대시보드 지표 검토를 보조한 가상 인턴 경험':'虚构实习经历：协助数据清洗、周报撰写及仪表盘指标检查','별숲 데이터 챌린지 · 우수상':'星林数据挑战赛 · 优秀奖','공공 데이터를 활용한 지역 생활 편의 분석 프로젝트로 팀 발표 및 결과 보고서 제작':'参与利用公共数据分析地区生活便利度的项目，完成团队展示与成果报告','The Catholic University of Korea 데이터 비즈니스 학회':'韩国加图立大学数据商业社团','격주 케이스 스터디 진행, 산업 리서치와 데이터 기반 서비스 개선안 발표':'每两周开展案例研讨，进行行业调研并发表数据驱动的服务优化方案','경영학과 4학년으로 재학 중이며 경영 관련 과목을 이수 중인 설정':'虚构设定：目前就读于经营学专业四年级，正在修读经营学相关课程',
+      '함께 성장할 기회를 기다립니다.':'期待携手成长的机会。','데이터와 비즈니스에 관한 대화를 나누고 싶습니다.':'期待与您交流数据与商业相关的话题。','이메일 보내기 ↗':'发送邮件 ↗','Thea의 학력·수상·인턴십·프로젝트 등 인물 및 이력 정보는 창작된 가상 설정입니다.':'Thea的学历、获奖、实习、项目等人物与履历信息均为虚构设定。',
+      '닫기':'关闭','soft studio backdrop':'柔和的工作室背景','wall note':'墙面便签','plant pot and leaves':'盆栽与叶片','dual monitors':'双显示器','monitor one: chart':'显示器一：图表','monitor two: dashboard':'显示器二：数据仪表盘','desk':'书桌','rounded character':'圆润角色','keyboard':'键盘','mug':'马克杯','little data cards':'数据卡片'
+    };
+    const englishTranslations = {
+      '메뉴 ☰':'Menu ☰','닫기 ×':'Close ×','소개':'About','프로젝트':'Projects','역량':'Skills','활동 기록':'Experience','연락처':'Contact',
+      '데이터로 발견하고,':'Discover through data,','실행으로 연결하는':'turn insights into action.','Thea입니다.':'I am Thea.',
+      '비즈니스의 작은 질문을 데이터로 구체화하고, 팀이 활용할 수 있는 해결책으로 만드는 일에 관심이 있습니다. 분석과 커뮤니케이션을 함께 갖춘 경영정보 인재로 성장하고 있습니다.':'I enjoy turning business questions into data-driven insights and practical solutions that teams can use. I am developing as a business professional with strengths in both analysis and communication.',
+      '프로젝트 보기':'View Projects','연락하기':'Contact Me','Thea':'Thea','The Catholic University of Korea · 경영학과 4학년':'The Catholic University of Korea · Business Administration, Senior','The Catholic University of Korea · 경영학과':'The Catholic University of Korea · Business Administration','관심 분야':'Areas of Interest','데이터 분석 · 서비스 기획':'Data Analysis · Service Planning','지원 기업':'Target Company','모아빛에너지':'Moabit Energy','인턴 경험':'Internship','여울데이터랩':'Yeoul Data Lab','전공·학년':'Major & Year','경영학과 · 4학년':'Business Administration · Senior','취미':'Interests','서예 · 음악 · 춤':'Calligraphy · Music · Dance','좋아하는 과목':'Favorite Courses','경영정보론 · 국제경영론 · 마케팅':'Management Information Systems · International Business · Marketing',
+      '본 포트폴리오의 인물 및 이력은 모두 가상입니다.':'All people and career details in this portfolio are fictional.','기술과 비즈니스 사이에서 의미 있는 연결을 만드는 사람':'Creating meaningful connections between technology and business','안녕하세요, Thea입니다.':'Hello, I’m Thea.',
+      'The Catholic University of Korea 경영학과 4학년으로, 경영 프로세스와 데이터 분석을 함께 공부하고 있습니다. 문제를 정의할 때는 사용자의 관점을 먼저 살피고, 해결책을 제안할 때는 데이터와 실행 가능성을 기준으로 판단합니다.':'I am a senior majoring in Business Administration at The Catholic University of Korea, where I study business processes and data analysis. I begin by considering the user’s perspective when defining a problem, and evaluate solutions based on data and feasibility.',
+      '“좋은 분석은 숫자를 설명하는 데서 끝나지 않고, 더 나은 선택을 돕습니다.”':'“Good analysis goes beyond explaining numbers; it helps people make better decisions.”',
+      '모아빛에너지의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.':'I hope to contribute to Moabit Energy’s sustainable energy services and data-driven operational innovation. I learn new tools quickly and turn what I learn into meaningful team outcomes.',
+      'Thea의 아늑한 데이터 작업실':'Thea’s Cozy Data Studio','둥근 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.':'A friendly, rounded character explores data on dual monitors at a wooden desk, with a plant and a mug nearby.',
+      '움직임 일시정지':'Pause motion','움직임 재생':'Play motion','시스템 설정으로 모션 제한됨':'Motion disabled by system settings','작은 데이터 작업실':'A Little Data Studio',
+      '듀얼 모니터는 분석과 시각화를, 둥근 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.':'The dual monitors represent analysis and visualization, while the rounded character symbolizes curiosity and continuous learning. The wooden desk, plant, and mug reflect Thea’s calm, thoughtful approach to turning ideas into action.',
+      '문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트':'Three fictional projects spanning problem definition, analysis, and recommendations','캠퍼스 에너지 사용량 분석':'Campus Energy Consumption Analysis','건물별 전력 사용 패턴을 비교해 피크 시간대와 절감 가능 구간을 찾고, 에너지 절약 대시보드의 핵심 지표를 설계했습니다.':'Compared electricity usage patterns across campus buildings to identify peak periods and savings opportunities, then designed key metrics for an energy-saving dashboard.',
+      '데이터 시각화':'Data Visualization','에너지':'Energy','상세 보기 →':'View Details →','친환경 구독 서비스 기획':'Eco-friendly Subscription Service Planning','친환경 생활용품 구독 서비스의 고객 여정을 분석하고, 설문 결과를 바탕으로 재구독률 개선 아이디어를 제안했습니다.':'Analyzed the customer journey of an eco-friendly household subscription service and proposed ways to improve renewals based on survey findings.','서비스 기획':'Service Planning','고객 분석':'Customer Analysis',
+      '지역 태양광 입지 탐색':'Regional Solar Site Exploration','공공 데이터를 활용해 지역별 일사량·건물 밀도·접근성을 비교하고, 후보 지역을 검토하는 분석 프레임워크를 구성했습니다.':'Used public data to compare regional sunlight, building density, and accessibility, and developed an analytical framework for evaluating potential sites.','공공 데이터':'Public Data','리서치':'Research',
+      '학습 및 가상 프로젝트를 통해 다져 온 업무 기반 역량':'Professional skills developed through learning and fictional projects','데이터·도구':'Data & Tools','상':'Advanced','중상':'Upper-intermediate','중':'Intermediate','협업·비즈니스':'Collaboration & Business','문제 정의 및 구조화':'Problem Definition & Structuring','강점':'Strength','리서치 및 인사이트 도출':'Research & Insight Development','문서 작성·발표':'Writing & Presentations','팀 커뮤니케이션':'Team Communication','※ 숙련도 표시는 포트폴리오 구성을 위한 가상 예시이며, 공인 평가 결과가 아닙니다.':'※ Skill levels are illustrative examples for this fictional portfolio and are not certified assessment results.',
+      '배움과 협업을 통해 관심 분야를 넓혀 온 과정':'A journey of expanding interests through learning and collaboration','재경계열 경진월 회계기능대회 · 3등':'Finance Department Accounting Skills Competition · Third Place','전문대학 재학 당시 수상한 회계 기능 대회 3등상':'Third-place award in an accounting skills competition while attending junior college','여울데이터랩 · 데이터 분석 인턴':'Yeoul Data Lab · Data Analysis Intern','데이터 정제, 주간 리포트 작성, 대시보드 지표 검토를 보조한 가상 인턴 경험':'Fictional internship assisting with data cleaning, weekly reports, and dashboard metric reviews',
+      '함께 성장할 기회를 기다립니다.':'Looking forward to opportunities to grow together.','데이터와 비즈니스에 관한 대화를 나누고 싶습니다.':'I would love to connect and talk about data and business.','이메일 보내기 ↗':'Send Email ↗','Thea의 학력·수상·인턴십·프로젝트 등 인물 및 이력 정보는 창작된 가상 설정입니다.':'Thea’s education, awards, internship, projects, and other profile details are fictional.',
+      '닫기':'Close','soft studio backdrop':'Soft studio backdrop','wall note':'Wall note','plant pot and leaves':'Plant pot and leaves','dual monitors':'Dual monitors','monitor one: chart':'Monitor one: chart','monitor two: dashboard':'Monitor two: dashboard','desk':'Desk','rounded character':'Rounded character','keyboard':'Keyboard','mug':'Mug','little data cards':'Small data cards'
+    };
+    const attributeTranslations = {
+      ko: {'Thea 홈':'Thea 홈','주요 메뉴':'주요 메뉴','데이터 작업실 일러스트와 설명':'데이터 작업실 일러스트와 설명','닫기':'닫기'},
+      zh: {'Thea 홈':'Thea主页','주요 메뉴':'主导航','데이터 작업실 일러스트와 설명':'数据工作室插画与说明','닫기':'关闭'},
+      en: {'Thea 홈':'Thea Home','주요 메뉴':'Main navigation','데이터 작업실 일러스트와 설명':'Data studio illustration and description','닫기':'Close'}
+    };
+    const originalTextNodes = [];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (node.parentElement && !['SCRIPT','STYLE'].includes(node.parentElement.tagName)) originalTextNodes.push({node, original: node.nodeValue});
+    }
+    function setLanguage(lang) {
+      const dictionary = lang === 'zh' ? translations : (lang === 'en' ? englishTranslations : {});
+      const nextLabel = lang === 'ko' ? '中文' : (lang === 'zh' ? 'English' : '한국어');
+      const languageNames = {ko:'한국어', zh:'中文', en:'English'};
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+      originalTextNodes.forEach(({node, original}) => {
+        const trimmed = original.trim();
+        const translated = dictionary[trimmed];
+        node.nodeValue = translated ? original.replace(trimmed, translated) : original;
+      });
+      document.querySelectorAll('[aria-label]').forEach(el => {
+        const original = el.dataset.originalAria || el.getAttribute('aria-label');
+        if (!el.dataset.originalAria) el.dataset.originalAria = original;
+        const attrMap = attributeTranslations[lang] || {};
+        const ariaMap = {
+          ko: {'Switch language':'언어 전환','Close':'닫기','Close modal':'닫기'},
+          zh: {'Switch language':'切换语言','Close':'关闭','Close modal':'关闭'},
+          en: {'Switch language':'Switch language','닫기':'Close'}
+        };
+        el.setAttribute('aria-label', attrMap[original] || (ariaMap[lang] || {})[original] || original);
+      });
+      document.getElementById('languageToggle').textContent = nextLabel;
+      document.getElementById('languageToggle').setAttribute('aria-label', lang === 'zh' ? '切换语言' : lang === 'en' ? 'Switch language' : '언어 전환');
+      if (menuToggle) menuToggle.textContent = navLinks.classList.contains('open') ? (lang === 'zh' ? '关闭 ×' : lang === 'en' ? 'Close ×' : '닫기 ×') : (lang === 'zh' ? '菜单 ☰' : lang === 'en' ? 'Menu ☰' : '메뉴 ☰');
+      document.title = lang === 'zh' ? 'Thea | 作品集' : lang === 'en' ? 'Thea | Portfolio' : 'Thea | Portfolio';
+      currentLanguage = lang;
+      if (typeof updateMotionButton === 'function' && motionToggle) updateMotionButton();
+      if (modal.classList.contains('open') && activeProject) renderProjectDetail(activeProject);
+    }
+    let currentLanguage = 'ko';
+    let activeProject = null;
+    document.getElementById('languageToggle').addEventListener('click', () => {
+      const order = ['ko', 'zh', 'en'];
+      setLanguage(order[(order.indexOf(currentLanguage) + 1) % order.length]);
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? (currentLanguage === 'zh' ? '关闭 ×' : currentLanguage === 'en' ? 'Close ×' : '닫기 ×') : (currentLanguage === 'zh' ? '菜单 ☰' : currentLanguage === 'en' ? 'Menu ☰' : '메뉴 ☰');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = currentLanguage === 'zh' ? '菜单 ☰' : '메뉴 ☰';
+      });
+    });
+
+    const projectDetails = {
+      energy: {
+        ko: { title: '캠퍼스 에너지 사용량 분석', body: `<p><strong>목표</strong><br>캠퍼스 건물의 에너지 소비 패턴을 파악해 운영 효율을 높일 수 있는 지표를 제안했습니다.</p><p><strong>진행 과정</strong></p><ul><li>시간대·건물 유형별 전력 사용 데이터 정리</li><li>결측치와 이상치를 확인하고 분석용 데이터셋 구성</li><li>요일 및 시간대별 사용량을 시각화해 피크 구간 도출</li></ul><p><strong>결과 및 배운 점</strong><br>건물 관리자 관점에서 필요한 핵심 지표를 정리하고, 피크 시간대 알림과 월별 비교 화면을 제안했습니다. 분석 결과를 실제 의사결정 언어로 전달하는 경험을 쌓았습니다.</p><p><strong>담당 역할</strong> 데이터 정제 · 탐색적 분석 · 대시보드 초안</p>` },
+        en: { title: 'Campus Energy Consumption Analysis', body: `<p><strong>Objective</strong><br>Identify campus building energy-use patterns and recommend metrics to improve operational efficiency.</p><p><strong>Process</strong></p><ul><li>Organized electricity-use data by time period and building type</li><li>Checked missing values and outliers, then prepared an analysis dataset</li><li>Visualized usage by weekday and time to identify peak periods</li></ul><p><strong>Outcome & Learning</strong><br>Defined key metrics from a building manager’s perspective and proposed peak-period alerts and monthly comparison views. Practiced communicating analytical findings in practical decision-making terms.</p><p><strong>Role</strong> Data cleaning · Exploratory analysis · Dashboard draft</p>` },
+        zh: { title: '校园能源使用量分析', body: `<p><strong>项目目标</strong><br>了解校园建筑的能源消耗模式，提出有助于提升运营效率的指标。</p><p><strong>实施过程</strong></p><ul><li>整理不同时段、不同建筑类型的用电数据</li><li>检查缺失值与异常值，构建分析数据集</li><li>可视化不同星期与时段的用电量，识别高峰区间</li></ul><p><strong>成果与收获</strong><br>从建筑管理者的角度整理核心指标，并提出高峰时段提醒及月度对比页面。积累了将分析结果转化为实际决策语言的经验。</p><p><strong>负责内容</strong> 数据清洗 · 探索性分析 · 仪表盘初稿</p>` }
+      },
+      service: {
+        ko: { title: '친환경 구독 서비스 기획', body: `<p><strong>목표</strong><br>첫 구매 이후 고객의 재구독을 돕는 서비스 개선 방향을 도출했습니다.</p><p><strong>진행 과정</strong></p><ul><li>가상의 고객 설문 응답과 구매 이력 데이터 분석</li><li>가입·첫 배송·재구독 단계별 이탈 요인 정리</li><li>고객군별 알림 시점 및 상품 구성 개선안 설계</li></ul><p><strong>결과 및 배운 점</strong><br>고객이 구독을 중단하는 이유를 가격, 배송 주기, 상품 적합성으로 분류하고 선택형 배송 주기와 취향 기반 추천을 제안했습니다.</p><p><strong>담당 역할</strong> 고객 여정 분석 · SQL 기초 조회 · 서비스 제안서 작성</p>` },
+        en: { title: 'Eco-friendly Subscription Service Planning', body: `<p><strong>Objective</strong><br>Identify service improvements that encourage customers to renew after their first purchase.</p><p><strong>Process</strong></p><ul><li>Analyzed fictional customer survey responses and purchase histories</li><li>Mapped drop-off factors across sign-up, first delivery, and renewal</li><li>Designed notification timing and product mix improvements for customer segments</li></ul><p><strong>Outcome & Learning</strong><br>Grouped cancellation reasons into price, delivery frequency, and product fit, then proposed flexible delivery schedules and preference-based recommendations.</p><p><strong>Role</strong> Customer journey analysis · Basic SQL queries · Service proposal</p>` },
+        zh: { title: '环保订阅服务策划', body: `<p><strong>项目目标</strong><br>提出服务优化方向，帮助客户在首次购买后继续订阅。</p><p><strong>实施过程</strong></p><ul><li>分析模拟客户问卷回答与购买历史数据</li><li>梳理注册、首次配送、续订各阶段的流失原因</li><li>设计面向不同客户群体的通知时机与商品组合优化方案</li></ul><p><strong>成果与收获</strong><br>将客户停止订阅的原因归纳为价格、配送周期和商品适配度，并提出可选配送周期及基于偏好的推荐方案。</p><p><strong>负责内容</strong> 客户旅程分析 · SQL基础查询 · 服务提案撰写</p>` }
+      },
+      solar: {
+        ko: { title: '지역 태양광 입지 탐색', body: `<p><strong>목표</strong><br>공개된 지역 데이터를 조합해 태양광 설비 후보지를 검토하는 기초 분석 틀을 만들었습니다.</p><p><strong>진행 과정</strong></p><ul><li>일사량, 건물 밀도, 접근성 관련 공개 지표 조사</li><li>지표 단위와 기준을 통일해 비교표 작성</li><li>후보 지역별 장점·제약 요인을 요약</li></ul><p><strong>결과 및 배운 점</strong><br>단일 지표만으로 입지를 판단하기 어렵다는 점을 확인하고, 현장 조사와 경제성 검토가 함께 필요하다는 후속 과제를 제시했습니다.</p><p><strong>담당 역할</strong> 데이터 수집 · 비교 분석 · 결과 발표</p>` },
+        en: { title: 'Regional Solar Site Exploration', body: `<p><strong>Objective</strong><br>Build a preliminary framework for evaluating solar facility locations using public regional data.</p><p><strong>Process</strong></p><ul><li>Researched public indicators for solar irradiation, building density, and accessibility</li><li>Standardized units and criteria to create a comparison table</li><li>Summarized the strengths and constraints of candidate areas</li></ul><p><strong>Outcome & Learning</strong><br>Recognized that site selection cannot rely on a single metric and recommended follow-up field research and financial feasibility reviews.</p><p><strong>Role</strong> Data collection · Comparative analysis · Presentation</p>` },
+        zh: { title: '区域太阳能选址研究', body: `<p><strong>项目目标</strong><br>整合公开地区数据，建立用于初步评估太阳能设施候选地点的分析框架。</p><p><strong>实施过程</strong></p><ul><li>调研日照量、建筑密度及交通可达性等公开指标</li><li>统一指标单位与标准，制作对比表</li><li>总结各候选区域的优势与限制因素</li></ul><p><strong>成果与收获</strong><br>认识到仅凭单一指标难以判断选址，并提出后续还需结合现场调查与经济性评估。</p><p><strong>负责内容</strong> 数据收集 · 对比分析 · 成果展示</p>` }
+      }
+    };
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    function renderProjectDetail(projectKey) {
+      const item = projectDetails[projectKey][currentLanguage] || projectDetails[projectKey].ko;
+      modalTitle.textContent = item.title;
+      modalBody.innerHTML = item.body;
+    }
+    function closeModal() { modal.classList.remove('open'); activeProject = null; }
+    document.querySelectorAll('[data-project]').forEach(button => {
+      button.addEventListener('click', () => {
+        activeProject = button.dataset.project;
+        renderProjectDetail(activeProject);
+        modal.classList.add('open');
+        document.getElementById('modalClose').focus();
+      });
+    });
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
+
+    // Studio motion: requestAnimationFrame timestamp drives a 7-second float cycle.
+    // Motion is disabled for reduced-motion preferences and coarse/touch pointers.
+    const scene = document.querySelector('.scene-motion');
+    const motionToggle = document.getElementById('motionToggle');
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const finePointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const coarsePointerQuery = window.matchMedia('(pointer: coarse)');
+    let userPaused = false;
+    let tabHidden = document.hidden;
+    let animationFrameId = null;
+    let cycleStart = null;
+    let targetMouseX = 0;
+    let targetMouseY = 0;
+    let currentMouseX = 0;
+    let currentMouseY = 0;
+    let latestScrollY = window.scrollY || 0;
+
+    function canTrackPointer() {
+      return finePointerQuery.matches && !coarsePointerQuery.matches;
+    }
+
+    function updateMotionButton() {
+      if (reducedMotionQuery.matches) {
+        motionToggle.textContent = currentLanguage === 'zh' ? '系统设置已限制动画' : currentLanguage === 'en' ? 'Motion disabled by system settings' : '시스템 설정으로 모션 제한됨';
+        motionToggle.disabled = true;
+        motionToggle.setAttribute('aria-pressed', 'true');
+      } else {
+        motionToggle.disabled = false;
+        motionToggle.textContent = currentLanguage === 'zh' ? (userPaused ? '播放动画' : '暂停动画') : currentLanguage === 'en' ? (userPaused ? 'Play motion' : 'Pause motion') : (userPaused ? '움직임 재생' : '움직임 일시정지');
+        motionToggle.setAttribute('aria-pressed', String(userPaused));
+      }
+    }
+
+    function stopSceneMotion() {
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+      scene.style.willChange = 'auto';
+      scene.style.transform = 'translate3d(0, 0, 0)';
+    }
+
+    function renderSceneMotion(timestamp) {
+      if (userPaused || tabHidden || document.hidden || reducedMotionQuery.matches) {
+        stopSceneMotion();
+        return;
+      }
+      if (cycleStart === null) cycleStart = timestamp;
+
+      const elapsed = timestamp - cycleStart;
+      const floatY = Math.sin((elapsed / 7000) * Math.PI * 2) * 5;
+      const scrollY = Math.min(Math.max(latestScrollY, 0) * 0.04, 20);
+
+      // Smoothly ease toward pointer input; offsets and tilt are strictly bounded.
+      currentMouseX += (targetMouseX - currentMouseX) * 0.075;
+      currentMouseY += (targetMouseY - currentMouseY) * 0.075;
+      const translateX = currentMouseX * 7;
+      const pointerY = currentMouseY * 5;
+      const pointerMagnitude = Math.hypot(currentMouseX, currentMouseY);
+      const tiltScale = pointerMagnitude > 1 ? 4 / pointerMagnitude : 4;
+      const rotateY = currentMouseX * tiltScale;
+      const rotateX = currentMouseY * -tiltScale;
+      const translateY = floatY + pointerY - scrollY;
+
+      scene.style.willChange = 'transform';
+      scene.style.transform = `perspective(900px) translate3d(${translateX.toFixed(2)}px, ${translateY.toFixed(2)}px, 0) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+      animationFrameId = requestAnimationFrame(renderSceneMotion);
+    }
+
+    function startSceneMotion() {
+      if (userPaused || tabHidden || document.hidden || reducedMotionQuery.matches || animationFrameId !== null) return;
+      cycleStart = null;
+      animationFrameId = requestAnimationFrame(renderSceneMotion);
+    }
+
+    function resetPointerTracking() {
+      targetMouseX = 0;
+      targetMouseY = 0;
+    }
+
+    if (canTrackPointer()) {
+      scene.addEventListener('pointermove', event => {
+        if (!canTrackPointer()) return;
+        const rect = scene.getBoundingClientRect();
+        const normalizedX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        const normalizedY = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+        targetMouseX = Math.max(-1, Math.min(1, normalizedX));
+        targetMouseY = Math.max(-1, Math.min(1, normalizedY));
+      });
+      scene.addEventListener('pointerleave', resetPointerTracking);
+    }
+
+    window.addEventListener('scroll', () => {
+      latestScrollY = window.scrollY || 0;
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      if (!canTrackPointer()) resetPointerTracking();
+    }, { passive: true });
+
+    motionToggle.addEventListener('click', () => {
+      if (reducedMotionQuery.matches) return;
+      userPaused = !userPaused;
+      updateMotionButton();
+      if (userPaused) stopSceneMotion();
+      else startSceneMotion();
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      tabHidden = document.hidden;
+      if (tabHidden) stopSceneMotion();
+      else startSceneMotion();
+    });
+
+    function handleReducedMotionChange() {
+      updateMotionButton();
+      if (reducedMotionQuery.matches) stopSceneMotion();
+      else startSceneMotion();
+    }
+    if (typeof reducedMotionQuery.addEventListener === 'function') {
+      reducedMotionQuery.addEventListener('change', handleReducedMotionChange);
+    } else if (typeof reducedMotionQuery.addListener === 'function') {
+      // Compatibility fallback for older Safari versions.
+      reducedMotionQuery.addListener(handleReducedMotionChange);
+    }
+
+    updateMotionButton();
+    startSceneMotion();
+  </script>
 </body>
 </html>
