@@ -7,16 +7,16 @@
   <title>Thea | Portfolio</title>
   <style>
     :root {
-      --cream: #f5f1e7;
-      --paper: #fffdf7;
-      --green: #173f32;
-      --green-2: #285b49;
-      --sage: #dce5d9;
-      --ink: #24332c;
-      --muted: #718078;
-      --line: #dce1d8;
-      --accent: #c18a55;
-      --shadow: 0 18px 50px rgba(23, 63, 50, .08);
+      --cream: #edf3fa;
+      --paper: #ffffff;
+      --green: #142d4e;
+      --green-2: #315d88;
+      --sage: #dce8f4;
+      --ink: #1d3047;
+      --muted: #71849a;
+      --line: #d8e2ee;
+      --accent: #8fb6df;
+      --shadow: 0 20px 55px rgba(20, 45, 78, .12);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: auto; }
@@ -136,6 +136,81 @@
       .project-card { min-height: auto; }
       .contact-panel { align-items: flex-start; flex-direction: column; }
     }
+
+    /* Refined blue editorial portfolio theme */
+    body { background: #edf3fa; color: #1d3047; }
+    header { background: rgba(245,249,253,.94); backdrop-filter: blur(16px); border-bottom-color: #d9e4f0; }
+    .brand, h1, .section-head h2, .paper-card h3, .project-card h3, .event h3,
+    .modal-box h2 { color: #142d4e; }
+    .eyebrow, .event time, .project-no { color: #5d86b2; }
+    h1 span { color: #729cc7; }
+    .hero-copy, .paper-card p, .project-card p, .event p, .section-head p { color: #667b93; }
+    .profile-card, .contact { background: linear-gradient(145deg, #142d4e 0%, #244d78 100%); }
+    .profile-mark { width: 104px; height: 38px; border-radius: 999px; background: #dce9f6; color: #183858; font: 800 .72rem/1 -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: .16em; }
+    .btn.primary { background: #183858; border-color: #183858; }
+    .btn.secondary, .detail-btn { color: #244d78; border-color: #6f96bd; }
+    .paper-card, .project-card, .modal-box { background: rgba(255,255,255,.92); border-color: #d9e4f0; box-shadow: 0 12px 34px rgba(25,55,88,.055); }
+    section:nth-of-type(even) { background: rgba(255,255,255,.55); }
+    .scene-card { background: linear-gradient(145deg,#e4edf7,#f5f8fc); border-color: #d5e1ee; }
+    .scene-caption { color: #667b93; }
+    .scene-caption strong { color: #183858; }
+    .tag { background: #e3edf7; color: #244d78; }
+    .track { background: #e3ebf4; }
+    .fill { background: linear-gradient(90deg,#4777a8,#91b7dd); }
+    .timeline { border-left-color: #c4d5e7; }
+    .event::before { background: #6f9bc8; }
+    .contact .section-head h2, .contact .eyebrow { color: #f3f7fc; }
+    .email { color: #c8def3; }
+    .contact .btn { color: #183858; background: #f2f7fc; border-color: #f2f7fc; }
+    .fiction-note { color: #d6e4f2; }
+    .menu-toggle, .language-toggle, .motion-toggle { color: #183858; border-color: #c8d8e8; background: #fff; }
+    .nav-links a { color: #536d89; }
+    .nav-links a:hover, .nav-links a:focus { color: #4777a8; }
+    .interest-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .interest-card { background:linear-gradient(150deg,#fff 0%,#f4f8fc 100%); border:1px solid #d9e4f0; border-radius:20px; padding:26px; min-height:190px; box-shadow:0 12px 34px rgba(25,55,88,.05); }
+    .interest-number { color:#729cc7; font:700 1rem Georgia,serif; letter-spacing:.12em; }
+    .interest-card h3 { color:#183858; margin:14px 0 8px; font-size:1.18rem; }
+    .interest-card p { color:#667b93; margin:0; font-size:.94rem; }
+    @media(max-width:760px) { .interest-grid { grid-template-columns:1fr; } }
+
+
+    /* High-contrast navy contact section */
+    #contact.contact {
+      background: linear-gradient(135deg, #0b1f38 0%, #12365d 58%, #1c4a76 100%) !important;
+      color: #ffffff !important;
+      opacity: 1 !important;
+    }
+    #contact.contact .section-head h2,
+    #contact.contact .eyebrow,
+    #contact.contact .section-head p,
+    #contact.contact .contact-panel,
+    #contact.contact .contact-panel > div > div:first-child,
+    #contact.contact .fiction-note {
+      color: #ffffff !important;
+      opacity: 1 !important;
+    }
+    #contact.contact .email {
+      color: #d9ecff !important;
+      font-weight: 700;
+      opacity: 1 !important;
+    }
+    #contact.contact .contact-panel {
+      border-top-color: rgba(255,255,255,.3) !important;
+    }
+    #contact.contact .fiction-note {
+      border-color: rgba(255,255,255,.32) !important;
+      background: rgba(255,255,255,.07);
+    }
+    #contact.contact .btn {
+      color: #102d4d !important;
+      background: #f4f8fd !important;
+      border-color: #f4f8fd !important;
+    }
+    #contact.contact .btn:hover,
+    #contact.contact .btn:focus-visible {
+      background: #dcecff !important;
+      border-color: #dcecff !important;
+    }
   </style>
 </head>
 <body>
@@ -144,7 +219,7 @@
       <a class="brand" href="#home" aria-label="Thea 홈">THEA / PORTFOLIO</a>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">메뉴 ☰</button>
       <nav class="nav-links" id="navLinks" aria-label="주요 메뉴">
-        <a href="#about">소개</a><a href="#projects">프로젝트</a><a href="#skills">역량</a><a href="#activities">활동 기록</a><a href="#contact">연락처</a>
+        <a href="#about">소개</a><a href="#interests">관심사</a><a href="#projects">프로젝트</a><a href="#skills">역량</a><a href="#activities">활동 기록</a><a href="#contact">연락처</a>
       </nav>
       <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">中文</button>
     </div>
@@ -162,7 +237,7 @@
         </div>
       </div>
       <aside class="profile-card" aria-label="프로필 요약">
-        <div class="profile-mark">T</div>
+        <div class="profile-mark">ABOUT ME</div>
         <h2>Thea</h2>
         <p>The Catholic University of Korea · 경영학과 4학년</p>
         <div class="profile-meta">
@@ -170,8 +245,8 @@
           <div><span>관심 분야</span> 데이터 분석 · 서비스 기획</div>
           <div><span>취미</span> 서예 · 음악 · 춤</div>
           <div><span>좋아하는 과목</span> 경영정보론 · 국제경영론 · 마케팅</div>
-          <div><span>지원 기업</span> 모아빛에너지</div>
-          <div><span>인턴 경험</span> 여울데이터랩</div>
+          <div><span>지원 기업</span> Sunshine</div>
+          <div><span>인턴 경험</span> Sunshine</div>
         </div>
         <div class="fiction-note">본 포트폴리오의 인물 및 이력은 모두 가상입니다.</div>
       </aside>
@@ -188,14 +263,14 @@
             </article>
             <article class="paper-card">
               <p class="quote">“좋은 분석은 숫자를 설명하는 데서 끝나지 않고, 더 나은 선택을 돕습니다.”</p>
-              <p style="margin-top:14px">모아빛에너지의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.</p>
+              <p style="margin-top:14px">Sunshine의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.</p>
             </article>
           </div>
           <aside class="scene-card" aria-label="데이터 작업실 일러스트와 설명">
             <div class="scene-motion">
               <svg viewBox="0 0 520 390" role="img" aria-labelledby="studioTitle studioDesc" xmlns="http://www.w3.org/2000/svg">
                 <title id="studioTitle">Thea의 아늑한 데이터 작업실</title>
-                <desc id="studioDesc">둥근 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.</desc>
+                <desc id="studioDesc">긴 머리의 여성 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.</desc>
                 <defs>
                   <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8f3e7"/><stop offset="1" stop-color="#e8eddf"/></linearGradient>
                   <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c99563"/><stop offset="1" stop-color="#a96f45"/></linearGradient>
@@ -242,17 +317,30 @@
                   <path d="M66 250h13v91H66zm373 0h13v91h-13z" fill="#96613f"/>
                   <path d="M49 250Q260 264 471 250" fill="none" stroke="#e0b17e" stroke-width="3"/>
                 </g>
-                <!-- rounded character -->
+                <!-- refined feminine character -->
                 <g filter="url(#softShadow)">
-                  <ellipse cx="274" cy="238" rx="43" ry="12" fill="#6b8b75" opacity=".22"/>
-                  <path d="M237 218q0-48 38-48t38 48v12h-76Z" fill="#e9b98e"/>
-                  <circle cx="275" cy="180" r="38" fill="#f1c9a2"/>
-                  <path d="M240 176q2-39 37-39 31 0 36 32-16-12-31-11-22 2-42 18Z" fill="#526b58"/>
-                  <circle cx="262" cy="181" r="3.5" fill="#34483d"/><circle cx="288" cy="181" r="3.5" fill="#34483d"/>
-                  <path d="M269 194q7 7 14 0" fill="none" stroke="#b87561" stroke-width="2.5" stroke-linecap="round"/>
-                  <circle cx="250" cy="190" r="6" fill="#e9a18f" opacity=".7"/><circle cx="300" cy="190" r="6" fill="#e9a18f" opacity=".7"/>
-                  <path d="M239 221q-15 4-22 17m95-17q15 4 22 17" stroke="#e9b98e" stroke-width="12" stroke-linecap="round"/>
-                  <path d="M251 225q23 13 47 0" fill="none" stroke="#fff0d9" stroke-width="5" stroke-linecap="round"/>
+                  <ellipse cx="274" cy="238" rx="47" ry="12" fill="#496f96" opacity=".20"/>
+                  <!-- shoulders and blouse -->
+                  <path d="M229 230q7-34 46-34 39 0 46 34v10h-92Z" fill="#8fb6df"/>
+                  <path d="M261 201l14 17 14-17" fill="none" stroke="#f7fbff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- long hair behind face -->
+                  <path d="M234 177q-2-43 40-48 47-3 50 45l-4 48q-8 14-18 8l-1-37-51 1-2 38q-13 8-19-7Z" fill="#243d5b"/>
+                  <path d="M238 166q-8 28 1 57M317 164q10 29 1 59" fill="none" stroke="#426184" stroke-width="5" stroke-linecap="round"/>
+                  <!-- face -->
+                  <ellipse cx="275" cy="177" rx="34" ry="39" fill="#f3cdb5"/>
+                  <!-- fringe -->
+                  <path d="M242 169q2-35 34-37 30 0 34 30-15-12-31-12-20 0-37 19Z" fill="#243d5b"/>
+                  <path d="M251 174q5-4 10 0m27 0q5-4 10 0" fill="none" stroke="#35445a" stroke-width="2.3" stroke-linecap="round"/>
+                  <ellipse cx="263" cy="181" rx="2.7" ry="3.5" fill="#293d55"/>
+                  <ellipse cx="289" cy="181" rx="2.7" ry="3.5" fill="#293d55"/>
+                  <path d="M269 195q6 5 12 0" fill="none" stroke="#bd7f7a" stroke-width="2.4" stroke-linecap="round"/>
+                  <ellipse cx="251" cy="190" rx="5" ry="3.5" fill="#e9a59e" opacity=".65"/>
+                  <ellipse cx="299" cy="190" rx="5" ry="3.5" fill="#e9a59e" opacity=".65"/>
+                  <!-- hair highlight -->
+                  <path d="M247 153q12-18 29-17" fill="none" stroke="#607b9c" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+                  <!-- arms -->
+                  <path d="M235 218q-13 8-18 21m96-21q13 8 18 21" stroke="#f3cdb5" stroke-width="11" stroke-linecap="round"/>
+                  <path d="M258 227q17 9 34 0" fill="none" stroke="#f7fbff" stroke-width="4" stroke-linecap="round"/>
                 </g>
                 <!-- keyboard -->
                 <path d="M207 240l112-2 17 14-111 3Z" fill="#e5e8dd" stroke="#c4cec2" stroke-width="2"/>
@@ -275,33 +363,60 @@
             <div class="scene-controls">
               <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false">움직임 일시정지</button>
             </div>
-            <p class="scene-caption"><strong>작은 데이터 작업실</strong><br>듀얼 모니터는 분석과 시각화를, 둥근 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.</p>
+            <p class="scene-caption"><strong>작은 데이터 작업실</strong><br>듀얼 모니터는 분석과 시각화를, 여성 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.</p>
           </aside>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="interests">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">02 / Interests</div><h2 id="interestHeading">관심사</h2></div>
+          <p id="interestIntro">일상 속에서 영감과 균형을 발견하는 세 가지 취향</p>
+        </div>
+        <div class="interest-grid">
+          <article class="interest-card">
+            <div class="interest-number">01 / CALLIGRAPHY</div>
+            <h3 id="interestTitle1">서예</h3>
+            <p id="interestDesc1">붓끝의 흐름과 여백에 집중하며 생각을 차분히 정리하고 섬세한 표현의 아름다움을 배웁니다.</p>
+          </article>
+          <article class="interest-card">
+            <div class="interest-number">02 / MUSIC</div>
+            <h3 id="interestTitle2">음악</h3>
+            <p id="interestDesc2">다양한 장르의 음악을 듣고 리듬과 분위기에서 새로운 영감을 얻으며 일상에 활력을 더합니다.</p>
+          </article>
+          <article class="interest-card">
+            <div class="interest-number">03 / DANCE</div>
+            <h3 id="interestTitle3">춤</h3>
+            <p id="interestDesc3">음악을 몸짓으로 표현하며 에너지를 발산하고 움직임을 통해 자신만의 감각과 표현력을 키웁니다.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="projects">
       <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">02 / Selected work</div><h2>프로젝트</h2></div><p>문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트</p></div>
+        <div class="section-head"><div><div class="eyebrow">03 / Selected work</div><h2 id="projectsHeading">프로젝트</h2></div><p id="projectsIntro">문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트</p></div>
         <div class="project-grid">
           <article class="project-card">
-            <div class="project-no">PROJECT 01</div><h3>캠퍼스 에너지 사용량 분석</h3>
-            <p>건물별 전력 사용 패턴을 비교해 피크 시간대와 절감 가능 구간을 찾고, 에너지 절약 대시보드의 핵심 지표를 설계했습니다.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">데이터 시각화</span><span class="tag">에너지</span></div>
-            <button class="detail-btn" data-project="energy">상세 보기 →</button>
+            <div class="project-no">PROJECT 01</div><h3 id="projectTitle1">커피 매장 판매량 및 수요 예측</h3>
+            <p id="projectDesc1">매장별·시간대별 POS 판매 데이터를 분석해 인기 메뉴와 피크타임을 파악하고, 원두와 우유 등 주요 재료의 수요 예측 지표를 설계했습니다.</p>
+            <div class="tags"><span class="tag" id="projectTag11">Python</span><span class="tag" id="projectTag12">데이터 시각화</span><span class="tag" id="projectTag13">커피 리테일</span></div>
+            <button class="detail-btn" id="projectButton1" data-project="energy">상세 보기 →</button>
           </article>
           <article class="project-card">
-            <div class="project-no">PROJECT 02</div><h3>친환경 구독 서비스 기획</h3>
-            <p>친환경 생활용품 구독 서비스의 고객 여정을 분석하고, 설문 결과를 바탕으로 재구독률 개선 아이디어를 제안했습니다.</p>
-            <div class="tags"><span class="tag">서비스 기획</span><span class="tag">SQL</span><span class="tag">고객 분석</span></div>
-            <button class="detail-btn" data-project="service">상세 보기 →</button>
+            <div class="project-no">PROJECT 02</div><h3 id="projectTitle2">커피 멤버십 및 고객 충성도 프로그램 기획</h3>
+            <p id="projectDesc2">방문·구매 이력과 고객 설문을 바탕으로 커피 멤버십 이용 여정을 분석하고, 재방문과 재구매를 높일 리워드 및 개인화 혜택을 제안했습니다.</p>
+            <div class="tags"><span class="tag" id="projectTag21">멤버십 기획</span><span class="tag" id="projectTag22">SQL</span><span class="tag" id="projectTag23">고객 분석</span></div>
+            <button class="detail-btn" id="projectButton2" data-project="service">상세 보기 →</button>
           </article>
           <article class="project-card">
-            <div class="project-no">PROJECT 03</div><h3>지역 태양광 입지 탐색</h3>
-            <p>공공 데이터를 활용해 지역별 일사량·건물 밀도·접근성을 비교하고, 후보 지역을 검토하는 분석 프레임워크를 구성했습니다.</p>
-            <div class="tags"><span class="tag">공공 데이터</span><span class="tag">Excel</span><span class="tag">리서치</span></div>
-            <button class="detail-btn" data-project="solar">상세 보기 →</button>
+            <div class="project-no">PROJECT 03</div><h3 id="projectTitle3">시즌 메뉴 수익성 및 상품 구성 분석</h3>
+            <p id="projectDesc3">음료별 판매량·원가·마진을 비교해 계절 한정 메뉴의 수익성을 평가하고, 고객 선호와 운영 효율을 고려한 메뉴 구성안을 도출했습니다.</p>
+            <div class="tags"><span class="tag" id="projectTag31">메뉴 분석</span><span class="tag" id="projectTag32">Excel</span><span class="tag" id="projectTag33">리서치</span></div>
+            <button class="detail-btn" id="projectButton3" data-project="solar">상세 보기 →</button>
           </article>
         </div>
       </div>
@@ -309,7 +424,7 @@
 
     <section id="skills">
       <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">03 / Capabilities</div><h2>역량</h2></div><p>학습 및 가상 프로젝트를 통해 다져 온 업무 기반 역량</p></div>
+        <div class="section-head"><div><div class="eyebrow">04 / Capabilities</div><h2>역량</h2></div><p>학습 및 가상 프로젝트를 통해 다져 온 업무 기반 역량</p></div>
         <div class="skills-layout">
           <div class="paper-card">
             <h3>데이터·도구</h3>
@@ -332,9 +447,9 @@
 
     <section id="activities">
       <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">04 / Activities</div><h2>활동 기록</h2></div><p>배움과 협업을 통해 관심 분야를 넓혀 온 과정</p></div>
+        <div class="section-head"><div><div class="eyebrow">05 / Activities</div><h2>활동 기록</h2></div><p>배움과 협업을 통해 관심 분야를 넓혀 온 과정</p></div>
         <div class="timeline">
-          <article class="event"><time>2025.07 – 2025.08</time><h3>여울데이터랩 · 데이터 분석 인턴</h3><p>데이터 정제, 주간 리포트 작성, 대시보드 지표 검토를 보조한 가상 인턴 경험</p></article>
+          <article class="event"><time>2025.07 – 2025.08</time><h3>Sunshine · 커피 비즈니스 데이터 분석 인턴</h3><p>가상의 커피 브랜드 Sunshine에서 매장 판매·재고 데이터를 정리하고 주간 실적 리포트와 운영 대시보드 개선을 지원한 인턴 경험</p></article>
           <article class="event"><time>2017</time><h3>재경계열 경진월 회계기능대회 · 3등</h3><p>전문대학 재학 당시 수상한 회계 기능 대회 3등상</p></article>
         </div>
       </div>
@@ -342,7 +457,7 @@
 
     <section class="contact" id="contact">
       <div class="wrap">
-        <div class="section-head"><div><div class="eyebrow">05 / Contact</div><h2>함께 성장할 기회를 기다립니다.</h2></div><p>데이터와 비즈니스에 관한 대화를 나누고 싶습니다.</p></div>
+        <div class="section-head"><div><div class="eyebrow">06 / Contact</div><h2>함께 성장할 기회를 기다립니다.</h2></div><p>데이터와 비즈니스에 관한 대화를 나누고 싶습니다.</p></div>
         <div class="contact-panel">
           <div><div style="font-size:.82rem;color:#c6d3c8;margin-bottom:7px">EMAIL</div><a class="email" href="mailto:1140120307@qq.com">1140120307@qq.com</a></div>
           <a class="btn" href="mailto:1140120307@qq.com">이메일 보내기 ↗</a>
@@ -367,42 +482,42 @@
 
     // Bilingual UI: Korean is the default; the toggle switches all visible copy.
     const translations = {
-      '메뉴 ☰':'菜单 ☰','닫기 ×':'关闭 ×','소개':'自我介绍','프로젝트':'项目','역량':'能力','활동 기록':'活动经历','연락처':'联系方式',
+      '메뉴 ☰':'菜单 ☰','닫기 ×':'关闭 ×','소개':'自我介绍','관심사':'兴趣爱好','프로젝트':'项目','역량':'能力','활동 기록':'活动经历','연락처':'联系方式',
       '데이터로 발견하고,':'用数据发现问题，','실행으로 연결하는':'并将洞察转化为行动的','Thea입니다.':'我是Thea。',
       '비즈니스의 작은 질문을 데이터로 구체화하고, 팀이 활용할 수 있는 해결책으로 만드는 일에 관심이 있습니다. 분석과 커뮤니케이션을 함께 갖춘 경영정보 인재로 성장하고 있습니다.':'我热衷于将商业中的细小问题转化为数据问题，并提出团队能够落地的解决方案。我正努力成长为兼具分析能力与沟通能力的经营信息人才。',
-      '프로젝트 보기':'查看项目','연락하기':'联系我','Thea':'Thea','The Catholic University of Korea · 경영학과 4학년':'韩国加图立大学 · 经营学专业四年级','The Catholic University of Korea · 경영학과':'韩国加图立大学 · 经营学专业','관심 분야':'关注领域','데이터 분석 · 서비스 기획':'数据分析 · 服务策划','지원 기업':'目标企业','모아빛에너지':'Moa빛能源','인턴 경험':'实习经历','여울데이터랩':'汝울数据实验室','전공·학년':'专业·年级','경영학과 · 4학년':'经营学专业 · 四年级','취미':'兴趣爱好','서예 · 음악 · 춤':'书法 · 音乐 · 舞蹈','좋아하는 과목':'喜爱的课程','경영정보론 · 국제경영론 · 마케팅':'经营信息论 · 国际经营论 · 市场营销',
-      '본 포트폴리오의 인물 및 이력은 모두 가상입니다.':'本作品集中的人物及经历均为虚构设定。','기술과 비즈니스 사이에서 의미 있는 연결을 만드는 사람':'致力于连接技术与商业，创造实际价值','안녕하세요, Thea입니다.':'你好，我是Thea。',
+      '프로젝트 보기':'查看项目','연락하기':'联系我','Thea':'Thea','The Catholic University of Korea · 경영학과 4학년':'韩国加图立大学 · 经营学专业四年级','The Catholic University of Korea · 경영학과':'韩国加图立大学 · 经营学专业','관심 분야':'关注领域','데이터 분석 · 서비스 기획':'数据分析 · 服务策划','지원 기업':'目标企业','Sunshine':'Sunshine咖啡','인턴 경험':'实习经历','Sunshine':'Sunshine咖啡','전공·학년':'专业·年级','경영학과 · 4학년':'经营学专业 · 四年级','취미':'兴趣爱好','서예 · 음악 · 춤':'书法 · 音乐 · 舞蹈','좋아하는 과목':'喜爱的课程','경영정보론 · 국제경영론 · 마케팅':'经营信息论 · 国际经营论 · 市场营销',
+      '본 포트폴리오의 인물 및 이력은 모두 가상입니다.':'本作品集中的人物及经历均为虚构设定。','기술과 비즈니스 사이에서 의미 있는 연결을 만드는 사람':'致力于连接技术与商业，创造实际价值','일상 속에서 영감과 균형을 발견하는 세 가지 취향':'在日常生活中发现灵感与平衡的三种爱好','관심사':'兴趣爱好','서예 · Calligraphy':'书法 · Calligraphy','음악 · Music':'音乐 · Music','춤 · Dance':'舞蹈 · Dance','붓끝의 흐름과 여백에 집중하며 생각을 차분히 정리하고 섬세한 표현의 아름다움을 배웁니다.':'专注于笔触的流动与留白，在沉静思考中体会细腻表达之美。','다양한 장르의 음악을 듣고 리듬과 분위기에서 새로운 영감을 얻으며 일상에 활력을 더합니다.':'聆听不同风格的音乐，从节奏与氛围中汲取灵感，为日常注入活力。','음악을 몸짓으로 표현하며 에너지를 발산하고 움직임을 통해 자신만의 감각과 표현력을 키웁니다.':'用身体表达音乐、释放能量，并通过舞动培养个人感受力与表现力。','안녕하세요, Thea입니다.':'你好，我是Thea。',
       'The Catholic University of Korea 경영학과 4학년으로, 경영 프로세스와 데이터 분석을 함께 공부하고 있습니다. 문제를 정의할 때는 사용자의 관점을 먼저 살피고, 해결책을 제안할 때는 데이터와 실행 가능성을 기준으로 판단합니다.':'我目前就读于韩国加图立大学经营学专业四年级，同时学习经营流程与数据分析。定义问题时，我会优先考虑用户视角；提出解决方案时，则以数据和可执行性作为判断依据。',
       '“좋은 분석은 숫자를 설명하는 데서 끝나지 않고, 더 나은 선택을 돕습니다.”':'“优秀的分析不止于解释数字，更要帮助人们做出更好的选择。”',
-      '모아빛에너지의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.':'我希望为Moa빛能源的可持续能源服务与数据驱动的运营创新贡献力量。我能够快速学习新工具，并将所学转化为团队成果。',
-      'Thea의 아늑한 데이터 작업실':'Thea温馨的数据工作室','둥근 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.':'圆润可爱的角色坐在木桌前，通过双显示器查看数据，旁边摆放着绿植和马克杯。',
+      'Sunshine의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.':'我希望为咖啡品牌 Sunshine 的顾客体验与数据驱动的门店运营创新贡献力量。我能够快速学习新工具，并将所学转化为团队成果。',
+      'Thea의 아늑한 데이터 작업실':'Thea温馨的数据工作室','긴 머리의 여성 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.':'圆润可爱的角色坐在木桌前，通过双显示器查看数据，旁边摆放着绿植和马克杯。',
       '움직임 일시정지':'暂停动画','움직임 재생':'播放动画','시스템 설정으로 모션 제한됨':'系统设置已限制动画','작은 데이터 작업실':'小小数据工作室',
-      '듀얼 모니터는 분석과 시각화를, 둥근 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.':'双显示器象征数据分析与可视化，圆润的角色代表好奇心与持续学习。木桌、绿植和马克杯则体现了Thea在平静温暖的环境中，将想法付诸实践的工作方式。',
-      '문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트':'从问题定义、分析到方案提出的三个虚构项目','캠퍼스 에너지 사용량 분석':'校园能源使用量分析','건물별 전력 사용 패턴을 비교해 피크 시간대와 절감 가능 구간을 찾고, 에너지 절약 대시보드의 핵심 지표를 설계했습니다.':'比较各栋建筑的用电模式，找出用电高峰与节能空间，并设计能源节约仪表盘的核心指标。',
-      '데이터 시각화':'数据可视化','에너지':'能源','상세 보기 →':'查看详情 →','친환경 구독 서비스 기획':'环保订阅服务策划','친환경 생활용품 구독 서비스의 고객 여정을 분석하고, 설문 결과를 바탕으로 재구독률 개선 아이디어를 제안했습니다.':'分析环保生活用品订阅服务的客户旅程，并根据问卷结果提出提高续订率的建议。','서비스 기획':'服务策划','고객 분석':'客户分析',
-      '지역 태양광 입지 탐색':'区域太阳能选址研究','공공 데이터를 활용해 지역별 일사량·건물 밀도·접근성을 비교하고, 후보 지역을 검토하는 분석 프레임워크를 구성했습니다.':'利用公共数据比较各地区日照量、建筑密度与可达性，建立候选区域评估分析框架。','공공 데이터':'公共数据','리서치':'调研',
+      '듀얼 모니터는 분석과 시각화를, 여성 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.':'双显示器象征数据分析与可视化，圆润的角色代表好奇心与持续学习。木桌、绿植和马克杯则体现了Thea在平静温暖的环境中，将想法付诸实践的工作方式。',
+      '문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트':'从问题定义、分析到方案提出的三个虚构项目','커피 매장 판매량 및 수요 예측':'咖啡门店销售与需求预测','매장별·시간대별 POS 판매 데이터를 분석해 인기 메뉴와 피크타임을 파악하고, 원두와 우유 등 주요 재료의 수요 예측 지표를 설계했습니다.':'分析各门店及不同时段的 POS 销售数据，识别热门饮品与高峰时段，并设计咖啡豆、牛奶等主要原料的需求预测指标。',
+      '데이터 시각화':'数据可视化','에너지':'能源','상세 보기 →':'查看详情 →','커피 멤버십 및 고객 충성도 프로그램 기획':'咖啡会员体系与客户忠诚度计划','방문·구매 이력과 고객 설문을 바탕으로 커피 멤버십 이용 여정을 분석하고, 재방문과 재구매를 높일 리워드 및 개인화 혜택을 제안했습니다.':'基于到店与购买记录及顾客问卷分析咖啡会员旅程，提出提升重复到店率和复购率的奖励及个性化权益。','서비스 기획':'服务策划','고객 분석':'客户分析',
+      '시즌 메뉴 수익성 및 상품 구성 분석':'季节限定菜单盈利能力与产品组合分析','음료별 판매량·원가·마진을 비교해 계절 한정 메뉴의 수익성을 평가하고, 고객 선호와 운영 효율을 고려한 메뉴 구성안을 도출했습니다.':'比较不同饮品的销量、成本和利润率，评估季节限定菜单的盈利能力，并提出兼顾顾客偏好与运营效率的菜单组合。','공공 데이터':'公共数据','리서치':'调研',
       '학습 및 가상 프로젝트를 통해 다져 온 업무 기반 역량':'通过学习与模拟项目积累的基础业务能力','데이터·도구':'数据与工具','상':'高级','중상':'中高级','중':'中级','협업·비즈니스':'协作与商业','문제 정의 및 구조화':'问题定义与结构化','강점':'优势','리서치 및 인사이트 도출':'调研与洞察提炼','문서 작성·발표':'文档撰写与演示','팀 커뮤니케이션':'团队沟通','※ 숙련도 표시는 포트폴리오 구성을 위한 가상 예시이며, 공인 평가 결과가 아닙니다.':'※ 技能熟练度为作品集展示用的虚构示例，并非官方测评结果。',
-      '배움과 협업을 통해 관심 분야를 넓혀 온 과정':'通过学习与协作不断拓展兴趣领域的历程','재경계열 경진월 회계기능대회 · 3등':'财经系竞赛月会计技能大赛 · 三等奖','전문대학 재학 당시 수상한 회계 기능 대회 3등상':'专科在读期间获得会计技能大赛三等奖','여울데이터랩 · 데이터 분석 인턴':'汝울数据实验室 · 数据分析实习生','데이터 정제, 주간 리포트 작성, 대시보드 지표 검토를 보조한 가상 인턴 경험':'虚构实习经历：协助数据清洗、周报撰写及仪表盘指标检查','별숲 데이터 챌린지 · 우수상':'星林数据挑战赛 · 优秀奖','공공 데이터를 활용한 지역 생활 편의 분석 프로젝트로 팀 발표 및 결과 보고서 제작':'参与利用公共数据分析地区生活便利度的项目，完成团队展示与成果报告','The Catholic University of Korea 데이터 비즈니스 학회':'韩国加图立大学数据商业社团','격주 케이스 스터디 진행, 산업 리서치와 데이터 기반 서비스 개선안 발표':'每两周开展案例研讨，进行行业调研并发表数据驱动的服务优化方案','경영학과 4학년으로 재학 중이며 경영 관련 과목을 이수 중인 설정':'虚构设定：目前就读于经营学专业四年级，正在修读经营学相关课程',
+      '배움과 협업을 통해 관심 분야를 넓혀 온 과정':'通过学习与协作不断拓展兴趣领域的历程','재경계열 경진월 회계기능대회 · 3등':'财经系竞赛月会计技能大赛 · 三等奖','전문대학 재학 당시 수상한 회계 기능 대회 3등상':'专科在读期间获得会计技能大赛三等奖','Sunshine · 커피 비즈니스 데이터 분석 인턴':'Sunshine · 咖啡业务数据分析实习生','가상의 커피 브랜드 Sunshine에서 매장 판매·재고 데이터를 정리하고 주간 실적 리포트와 운영 대시보드 개선을 지원한 인턴 경험':'在虚构咖啡品牌 Sunshine 实习，整理门店销售与库存数据，并协助周报及运营仪表盘优化','별숲 데이터 챌린지 · 우수상':'星林数据挑战赛 · 优秀奖','공공 데이터를 활용한 지역 생활 편의 분석 프로젝트로 팀 발표 및 결과 보고서 제작':'参与利用公共数据分析地区生活便利度的项目，完成团队展示与成果报告','The Catholic University of Korea 데이터 비즈니스 학회':'韩国加图立大学数据商业社团','격주 케이스 스터디 진행, 산업 리서치와 데이터 기반 서비스 개선안 발표':'每两周开展案例研讨，进行行业调研并发表数据驱动的服务优化方案','경영학과 4학년으로 재학 중이며 경영 관련 과목을 이수 중인 설정':'虚构设定：目前就读于经营学专业四年级，正在修读经营学相关课程',
       '함께 성장할 기회를 기다립니다.':'期待携手成长的机会。','데이터와 비즈니스에 관한 대화를 나누고 싶습니다.':'期待与您交流数据与商业相关的话题。','이메일 보내기 ↗':'发送邮件 ↗','Thea의 학력·수상·인턴십·프로젝트 등 인물 및 이력 정보는 창작된 가상 설정입니다.':'Thea的学历、获奖、实习、项目等人物与履历信息均为虚构设定。',
       '닫기':'关闭','soft studio backdrop':'柔和的工作室背景','wall note':'墙面便签','plant pot and leaves':'盆栽与叶片','dual monitors':'双显示器','monitor one: chart':'显示器一：图表','monitor two: dashboard':'显示器二：数据仪表盘','desk':'书桌','rounded character':'圆润角色','keyboard':'键盘','mug':'马克杯','little data cards':'数据卡片'
     };
     const englishTranslations = {
-      '메뉴 ☰':'Menu ☰','닫기 ×':'Close ×','소개':'About','프로젝트':'Projects','역량':'Skills','활동 기록':'Experience','연락처':'Contact',
+      '메뉴 ☰':'Menu ☰','닫기 ×':'Close ×','소개':'About','관심사':'Interests','프로젝트':'Projects','역량':'Skills','활동 기록':'Experience','연락처':'Contact',
       '데이터로 발견하고,':'Discover through data,','실행으로 연결하는':'turn insights into action.','Thea입니다.':'I am Thea.',
       '비즈니스의 작은 질문을 데이터로 구체화하고, 팀이 활용할 수 있는 해결책으로 만드는 일에 관심이 있습니다. 분석과 커뮤니케이션을 함께 갖춘 경영정보 인재로 성장하고 있습니다.':'I enjoy turning business questions into data-driven insights and practical solutions that teams can use. I am developing as a business professional with strengths in both analysis and communication.',
-      '프로젝트 보기':'View Projects','연락하기':'Contact Me','Thea':'Thea','The Catholic University of Korea · 경영학과 4학년':'The Catholic University of Korea · Business Administration, Senior','The Catholic University of Korea · 경영학과':'The Catholic University of Korea · Business Administration','관심 분야':'Areas of Interest','데이터 분석 · 서비스 기획':'Data Analysis · Service Planning','지원 기업':'Target Company','모아빛에너지':'Moabit Energy','인턴 경험':'Internship','여울데이터랩':'Yeoul Data Lab','전공·학년':'Major & Year','경영학과 · 4학년':'Business Administration · Senior','취미':'Interests','서예 · 음악 · 춤':'Calligraphy · Music · Dance','좋아하는 과목':'Favorite Courses','경영정보론 · 국제경영론 · 마케팅':'Management Information Systems · International Business · Marketing',
-      '본 포트폴리오의 인물 및 이력은 모두 가상입니다.':'All people and career details in this portfolio are fictional.','기술과 비즈니스 사이에서 의미 있는 연결을 만드는 사람':'Creating meaningful connections between technology and business','안녕하세요, Thea입니다.':'Hello, I’m Thea.',
+      '프로젝트 보기':'View Projects','연락하기':'Contact Me','Thea':'Thea','The Catholic University of Korea · 경영학과 4학년':'The Catholic University of Korea · Business Administration, Senior','The Catholic University of Korea · 경영학과':'The Catholic University of Korea · Business Administration','관심 분야':'Areas of Interest','데이터 분석 · 서비스 기획':'Data Analysis · Service Planning','지원 기업':'Target Company','Sunshine':'Sunshine Coffee','인턴 경험':'Internship','Sunshine':'Sunshine Coffee','전공·학년':'Major & Year','경영학과 · 4학년':'Business Administration · Senior','취미':'Interests','서예 · 음악 · 춤':'Calligraphy · Music · Dance','좋아하는 과목':'Favorite Courses','경영정보론 · 국제경영론 · 마케팅':'Management Information Systems · International Business · Marketing',
+      '본 포트폴리오의 인물 및 이력은 모두 가상입니다.':'All people and career details in this portfolio are fictional.','기술과 비즈니스 사이에서 의미 있는 연결을 만드는 사람':'Creating meaningful connections between technology and business','일상 속에서 영감과 균형을 발견하는 세 가지 취향':'Three interests that bring inspiration and balance to everyday life','관심사':'Interests','서예 · Calligraphy':'Calligraphy','음악 · Music':'Music','춤 · Dance':'Dance','붓끝의 흐름과 여백에 집중하며 생각을 차분히 정리하고 섬세한 표현의 아름다움을 배웁니다.':'I focus on the flow of the brush and the beauty of negative space, finding calm and precision through each stroke.','다양한 장르의 음악을 듣고 리듬과 분위기에서 새로운 영감을 얻으며 일상에 활력을 더합니다.':'I explore different genres and draw fresh inspiration from rhythm and mood, bringing energy into everyday life.','음악을 몸짓으로 표현하며 에너지를 발산하고 움직임을 통해 자신만의 감각과 표현력을 키웁니다.':'I express music through movement, channeling energy while developing my own sense of rhythm and creative expression.','안녕하세요, Thea입니다.':'Hello, I’m Thea.',
       'The Catholic University of Korea 경영학과 4학년으로, 경영 프로세스와 데이터 분석을 함께 공부하고 있습니다. 문제를 정의할 때는 사용자의 관점을 먼저 살피고, 해결책을 제안할 때는 데이터와 실행 가능성을 기준으로 판단합니다.':'I am a senior majoring in Business Administration at The Catholic University of Korea, where I study business processes and data analysis. I begin by considering the user’s perspective when defining a problem, and evaluate solutions based on data and feasibility.',
       '“좋은 분석은 숫자를 설명하는 데서 끝나지 않고, 더 나은 선택을 돕습니다.”':'“Good analysis goes beyond explaining numbers; it helps people make better decisions.”',
-      '모아빛에너지의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.':'I hope to contribute to Moabit Energy’s sustainable energy services and data-driven operational innovation. I learn new tools quickly and turn what I learn into meaningful team outcomes.',
-      'Thea의 아늑한 데이터 작업실':'Thea’s Cozy Data Studio','둥근 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.':'A friendly, rounded character explores data on dual monitors at a wooden desk, with a plant and a mug nearby.',
+      'Sunshine의 지속가능한 에너지 서비스와 데이터 기반 운영 혁신에 기여하고 싶습니다. 새로운 도구를 빠르게 익히고, 배운 내용을 팀의 성과로 연결하겠습니다.':'I hope to contribute to Sunshine Coffee’s customer experience and data-driven store operations. I learn new tools quickly and turn what I learn into meaningful team outcomes.',
+      'Thea의 아늑한 데이터 작업실':'Thea’s Cozy Data Studio','긴 머리의 여성 캐릭터가 나무 책상 앞에서 듀얼 모니터로 데이터를 살펴보고 있으며, 옆에는 식물과 머그컵이 놓여 있습니다.':'A polished, friendly young woman with long hair explores data on dual monitors at a wooden desk, with a plant and a mug nearby.',
       '움직임 일시정지':'Pause motion','움직임 재생':'Play motion','시스템 설정으로 모션 제한됨':'Motion disabled by system settings','작은 데이터 작업실':'A Little Data Studio',
-      '듀얼 모니터는 분석과 시각화를, 둥근 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.':'The dual monitors represent analysis and visualization, while the rounded character symbolizes curiosity and continuous learning. The wooden desk, plant, and mug reflect Thea’s calm, thoughtful approach to turning ideas into action.',
-      '문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트':'Three fictional projects spanning problem definition, analysis, and recommendations','캠퍼스 에너지 사용량 분석':'Campus Energy Consumption Analysis','건물별 전력 사용 패턴을 비교해 피크 시간대와 절감 가능 구간을 찾고, 에너지 절약 대시보드의 핵심 지표를 설계했습니다.':'Compared electricity usage patterns across campus buildings to identify peak periods and savings opportunities, then designed key metrics for an energy-saving dashboard.',
-      '데이터 시각화':'Data Visualization','에너지':'Energy','상세 보기 →':'View Details →','친환경 구독 서비스 기획':'Eco-friendly Subscription Service Planning','친환경 생활용품 구독 서비스의 고객 여정을 분석하고, 설문 결과를 바탕으로 재구독률 개선 아이디어를 제안했습니다.':'Analyzed the customer journey of an eco-friendly household subscription service and proposed ways to improve renewals based on survey findings.','서비스 기획':'Service Planning','고객 분석':'Customer Analysis',
-      '지역 태양광 입지 탐색':'Regional Solar Site Exploration','공공 데이터를 활용해 지역별 일사량·건물 밀도·접근성을 비교하고, 후보 지역을 검토하는 분석 프레임워크를 구성했습니다.':'Used public data to compare regional sunlight, building density, and accessibility, and developed an analytical framework for evaluating potential sites.','공공 데이터':'Public Data','리서치':'Research',
+      '듀얼 모니터는 분석과 시각화를, 여성 캐릭터는 호기심과 꾸준한 배움을 상징합니다. 나무 책상과 식물, 머그컵은 차분하고 따뜻한 환경에서 아이디어를 실행으로 옮기는 Thea의 작업 방식을 표현합니다.':'The dual monitors represent analysis and visualization, while the rounded character symbolizes curiosity and continuous learning. The wooden desk, plant, and mug reflect Thea’s calm, thoughtful approach to turning ideas into action.',
+      '문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트':'Three fictional projects spanning problem definition, analysis, and recommendations','커피 매장 판매량 및 수요 예측':'Coffee Shop Sales & Demand Forecasting','매장별·시간대별 POS 판매 데이터를 분석해 인기 메뉴와 피크타임을 파악하고, 원두와 우유 등 주요 재료의 수요 예측 지표를 설계했습니다.':'Analyzed store- and time-based POS sales to identify popular drinks and peak periods, then designed demand metrics for key ingredients such as coffee beans and milk.',
+      '데이터 시각화':'Data Visualization','에너지':'Energy','상세 보기 →':'View Details →','커피 멤버십 및 고객 충성도 프로그램 기획':'Coffee Membership & Customer Loyalty Program','방문·구매 이력과 고객 설문을 바탕으로 커피 멤버십 이용 여정을 분석하고, 재방문과 재구매를 높일 리워드 및 개인화 혜택을 제안했습니다.':'Analyzed the coffee membership journey using visit and purchase histories and customer surveys, then proposed rewards and personalized benefits to increase repeat visits and purchases.','서비스 기획':'Service Planning','고객 분석':'Customer Analysis',
+      '시즌 메뉴 수익성 및 상품 구성 분석':'Seasonal Menu Profitability & Product Mix Analysis','음료별 판매량·원가·마진을 비교해 계절 한정 메뉴의 수익성을 평가하고, 고객 선호와 운영 효율을 고려한 메뉴 구성안을 도출했습니다.':'Compared drink sales, costs, and margins to evaluate seasonal menu profitability and recommend a product mix balancing customer preference and store efficiency.','공공 데이터':'Public Data','리서치':'Research',
       '학습 및 가상 프로젝트를 통해 다져 온 업무 기반 역량':'Professional skills developed through learning and fictional projects','데이터·도구':'Data & Tools','상':'Advanced','중상':'Upper-intermediate','중':'Intermediate','협업·비즈니스':'Collaboration & Business','문제 정의 및 구조화':'Problem Definition & Structuring','강점':'Strength','리서치 및 인사이트 도출':'Research & Insight Development','문서 작성·발표':'Writing & Presentations','팀 커뮤니케이션':'Team Communication','※ 숙련도 표시는 포트폴리오 구성을 위한 가상 예시이며, 공인 평가 결과가 아닙니다.':'※ Skill levels are illustrative examples for this fictional portfolio and are not certified assessment results.',
-      '배움과 협업을 통해 관심 분야를 넓혀 온 과정':'A journey of expanding interests through learning and collaboration','재경계열 경진월 회계기능대회 · 3등':'Finance Department Accounting Skills Competition · Third Place','전문대학 재학 당시 수상한 회계 기능 대회 3등상':'Third-place award in an accounting skills competition while attending junior college','여울데이터랩 · 데이터 분석 인턴':'Yeoul Data Lab · Data Analysis Intern','데이터 정제, 주간 리포트 작성, 대시보드 지표 검토를 보조한 가상 인턴 경험':'Fictional internship assisting with data cleaning, weekly reports, and dashboard metric reviews',
+      '배움과 협업을 통해 관심 분야를 넓혀 온 과정':'A journey of expanding interests through learning and collaboration','재경계열 경진월 회계기능대회 · 3등':'Finance Department Accounting Skills Competition · Third Place','전문대학 재학 당시 수상한 회계 기능 대회 3등상':'Third-place award in an accounting skills competition while attending junior college','Sunshine · 커피 비즈니스 데이터 분석 인턴':'Sunshine Coffee · Coffee Business Data Analyst Intern','가상의 커피 브랜드 Sunshine에서 매장 판매·재고 데이터를 정리하고 주간 실적 리포트와 운영 대시보드 개선을 지원한 인턴 경험':'Fictional internship at Sunshine Coffee, supporting store sales and inventory data, weekly reports, and operations dashboard improvements',
       '함께 성장할 기회를 기다립니다.':'Looking forward to opportunities to grow together.','데이터와 비즈니스에 관한 대화를 나누고 싶습니다.':'I would love to connect and talk about data and business.','이메일 보내기 ↗':'Send Email ↗','Thea의 학력·수상·인턴십·프로젝트 등 인물 및 이력 정보는 창작된 가상 설정입니다.':'Thea’s education, awards, internship, projects, and other profile details are fictional.',
       '닫기':'Close','soft studio backdrop':'Soft studio backdrop','wall note':'Wall note','plant pot and leaves':'Plant pot and leaves','dual monitors':'Dual monitors','monitor one: chart':'Monitor one: chart','monitor two: dashboard':'Monitor two: dashboard','desk':'Desk','rounded character':'Rounded character','keyboard':'Keyboard','mug':'Mug','little data cards':'Small data cards'
     };
@@ -426,6 +541,80 @@
         const trimmed = original.trim();
         const translated = dictionary[trimmed];
         node.nodeValue = translated ? original.replace(trimmed, translated) : original;
+      });
+      // Keep the Interests section in one language at a time. These dedicated
+      // targets avoid mixed Korean/Chinese labels and ensure every card updates.
+      const interestCopy = {
+        ko: {
+          heading: '관심사', intro: '일상 속에서 영감과 균형을 발견하는 세 가지 취향',
+          title1: '서예', desc1: '붓끝의 흐름과 여백에 집중하며 생각을 차분히 정리하고 섬세한 표현의 아름다움을 배웁니다.',
+          title2: '음악', desc2: '다양한 장르의 음악을 듣고 리듬과 분위기에서 새로운 영감을 얻으며 일상에 활력을 더합니다.',
+          title3: '춤', desc3: '음악을 몸짓으로 표현하며 에너지를 발산하고 움직임을 통해 자신만의 감각과 표현력을 키웁니다.'
+        },
+        zh: {
+          heading: '兴趣爱好', intro: '在日常生活中发现灵感与平衡的三种兴趣',
+          title1: '书法', desc1: '专注于笔触的流动与留白，让思绪沉淀，并在细腻的笔墨表达中体会美感。',
+          title2: '音乐', desc2: '聆听不同风格的音乐，从节奏与氛围中汲取灵感，为日常生活注入活力。',
+          title3: '舞蹈', desc3: '通过身体动作表达音乐、释放能量，并在舞动中培养个人感受力与表现力。'
+        },
+        en: {
+          heading: 'Interests', intro: 'Three interests that bring inspiration and balance to everyday life',
+          title1: 'Calligraphy', desc1: 'I focus on the flow of the brush and the beauty of negative space, finding calm and precision through each stroke.',
+          title2: 'Music', desc2: 'I explore different genres and draw fresh inspiration from rhythm and mood, bringing energy into everyday life.',
+          title3: 'Dance', desc3: 'I express music through movement, channeling energy while developing my own sense of rhythm and creative expression.'
+        }
+      };
+      const interestText = interestCopy[lang] || interestCopy.ko;
+      Object.entries(interestText).forEach(([key, value]) => {
+        const target = document.getElementById('interest' + key.charAt(0).toUpperCase() + key.slice(1));
+        if (target) target.textContent = value;
+      });
+      // Dedicated project translations: update every card field together so
+      // no Korean text remains when Chinese or English is selected.
+      const projectCopy = {
+        ko: {
+          heading: '프로젝트', intro: '문제 정의부터 분석, 제안까지 경험한 세 가지 가상 프로젝트',
+          title1: '커피 매장 판매량 및 수요 예측',
+          desc1: '매장별·시간대별 POS 판매 데이터를 분석해 인기 메뉴와 피크타임을 파악하고, 원두와 우유 등 주요 재료의 수요 예측 지표를 설계했습니다.',
+          tag11: 'Python', tag12: '데이터 시각화', tag13: '커피 리테일', button1: '상세 보기 →',
+          title2: '커피 멤버십 및 고객 충성도 프로그램 기획',
+          desc2: '방문·구매 이력과 고객 설문을 바탕으로 커피 멤버십 이용 여정을 분석하고, 재방문과 재구매를 높일 리워드 및 개인화 혜택을 제안했습니다.',
+          tag21: '멤버십 기획', tag22: 'SQL', tag23: '고객 분석', button2: '상세 보기 →',
+          title3: '시즌 메뉴 수익성 및 상품 구성 분석',
+          desc3: '음료별 판매량·원가·마진을 비교해 계절 한정 메뉴의 수익성을 평가하고, 고객 선호와 운영 효율을 고려한 메뉴 구성안을 도출했습니다.',
+          tag31: '메뉴 분석', tag32: 'Excel', tag33: '리서치', button3: '상세 보기 →'
+        },
+        zh: {
+          heading: '项目', intro: '涵盖问题定义、数据分析与方案建议的三个虚拟项目',
+          title1: '咖啡门店销售与需求预测',
+          desc1: '分析各门店及不同时段的 POS 销售数据，识别热门饮品和客流高峰，并设计咖啡豆、牛奶等主要原料的需求预测指标。',
+          tag11: 'Python', tag12: '数据可视化', tag13: '咖啡零售', button1: '查看详情 →',
+          title2: '咖啡会员体系与客户忠诚度计划',
+          desc2: '根据到店记录、购买历史和客户问卷分析咖啡会员的使用旅程，并提出提升回访率与复购率的奖励机制及个性化权益。',
+          tag21: '会员体系策划', tag22: 'SQL', tag23: '客户分析', button2: '查看详情 →',
+          title3: '季节限定菜单盈利能力与产品组合分析',
+          desc3: '比较各款饮品的销量、成本与利润率，评估季节限定菜单的盈利能力，并制定兼顾顾客偏好与门店运营效率的菜单组合方案。',
+          tag31: '菜单分析', tag32: 'Excel', tag33: '市场调研', button3: '查看详情 →'
+        },
+        en: {
+          heading: 'Projects', intro: 'Three fictional projects covering problem definition, analysis, and recommendations',
+          title1: 'Coffee Shop Sales & Demand Forecasting',
+          desc1: 'Analyzed POS sales by store and time slot to identify popular drinks and peak periods, then designed demand metrics for key ingredients such as coffee beans and milk.',
+          tag11: 'Python', tag12: 'Data Visualization', tag13: 'Coffee Retail', button1: 'View Details →',
+          title2: 'Coffee Membership & Customer Loyalty Program',
+          desc2: 'Mapped the coffee membership journey using visit and purchase histories and customer surveys, then proposed rewards and personalized benefits to increase repeat visits and purchases.',
+          tag21: 'Membership Strategy', tag22: 'SQL', tag23: 'Customer Analytics', button2: 'View Details →',
+          title3: 'Seasonal Menu Profitability & Product Mix Analysis',
+          desc3: 'Compared drink sales, costs, and margins to evaluate seasonal menu profitability and recommend a product mix that balances customer preferences with store efficiency.',
+          tag31: 'Menu Analytics', tag32: 'Excel', tag33: 'Research', button3: 'View Details →'
+        }
+      };
+      const projectText = projectCopy[lang] || projectCopy.ko;
+      Object.entries(projectText).forEach(([key, value]) => {
+        const target = document.getElementById('projects' + key.charAt(0).toUpperCase() + key.slice(1));
+        if (target) target.textContent = value;
+        const directTarget = document.getElementById('project' + key.charAt(0).toUpperCase() + key.slice(1));
+        if (directTarget) directTarget.textContent = value;
       });
       document.querySelectorAll('[aria-label]').forEach(el => {
         const original = el.dataset.originalAria || el.getAttribute('aria-label');
@@ -470,19 +659,19 @@
 
     const projectDetails = {
       energy: {
-        ko: { title: '캠퍼스 에너지 사용량 분석', body: `<p><strong>목표</strong><br>캠퍼스 건물의 에너지 소비 패턴을 파악해 운영 효율을 높일 수 있는 지표를 제안했습니다.</p><p><strong>진행 과정</strong></p><ul><li>시간대·건물 유형별 전력 사용 데이터 정리</li><li>결측치와 이상치를 확인하고 분석용 데이터셋 구성</li><li>요일 및 시간대별 사용량을 시각화해 피크 구간 도출</li></ul><p><strong>결과 및 배운 점</strong><br>건물 관리자 관점에서 필요한 핵심 지표를 정리하고, 피크 시간대 알림과 월별 비교 화면을 제안했습니다. 분석 결과를 실제 의사결정 언어로 전달하는 경험을 쌓았습니다.</p><p><strong>담당 역할</strong> 데이터 정제 · 탐색적 분석 · 대시보드 초안</p>` },
-        en: { title: 'Campus Energy Consumption Analysis', body: `<p><strong>Objective</strong><br>Identify campus building energy-use patterns and recommend metrics to improve operational efficiency.</p><p><strong>Process</strong></p><ul><li>Organized electricity-use data by time period and building type</li><li>Checked missing values and outliers, then prepared an analysis dataset</li><li>Visualized usage by weekday and time to identify peak periods</li></ul><p><strong>Outcome & Learning</strong><br>Defined key metrics from a building manager’s perspective and proposed peak-period alerts and monthly comparison views. Practiced communicating analytical findings in practical decision-making terms.</p><p><strong>Role</strong> Data cleaning · Exploratory analysis · Dashboard draft</p>` },
-        zh: { title: '校园能源使用量分析', body: `<p><strong>项目目标</strong><br>了解校园建筑的能源消耗模式，提出有助于提升运营效率的指标。</p><p><strong>实施过程</strong></p><ul><li>整理不同时段、不同建筑类型的用电数据</li><li>检查缺失值与异常值，构建分析数据集</li><li>可视化不同星期与时段的用电量，识别高峰区间</li></ul><p><strong>成果与收获</strong><br>从建筑管理者的角度整理核心指标，并提出高峰时段提醒及月度对比页面。积累了将分析结果转化为实际决策语言的经验。</p><p><strong>负责内容</strong> 数据清洗 · 探索性分析 · 仪表盘初稿</p>` }
+        ko: { title: '커피 매장 판매량 및 수요 예측', body: `<p><strong>목표</strong><br>매장별 판매 흐름을 파악해 인기 메뉴와 시간대별 수요를 예측하고, 재료 발주 및 인력 운영에 활용할 지표를 제안했습니다.</p><p><strong>진행 과정</strong></p><ul><li>가상의 POS 데이터를 날짜·시간·매장·메뉴별로 정리</li><li>요일, 날씨, 프로모션 여부에 따른 판매량 차이 비교</li><li>아메리카노·라떼 등 주요 메뉴의 피크타임과 재료 소요량 추정</li></ul><p><strong>결과 및 배운 점</strong><br>시간대별 판매 추이와 메뉴별 재료 사용량을 한눈에 볼 수 있는 운영 대시보드 초안을 제안했습니다. 데이터 분석을 재고 낭비 감소와 안정적인 고객 응대로 연결하는 방법을 익혔습니다.</p><p><strong>담당 역할</strong> POS 데이터 정제 · 판매 추이 분석 · 수요 예측 지표 및 대시보드 초안</p>` },
+        en: { title: 'Coffee Shop Sales & Demand Forecasting', body: `<p><strong>Objective</strong><br>Understand store-level sales patterns, forecast demand by menu and time, and recommend metrics for ingredient purchasing and staffing.</p><p><strong>Process</strong></p><ul><li>Organized fictional POS data by date, time, store, and menu item</li><li>Compared sales across weekdays, weather conditions, and promotions</li><li>Estimated peak periods and ingredient needs for key drinks such as Americanos and lattes</li></ul><p><strong>Outcome & Learning</strong><br>Proposed an operations dashboard showing hourly sales trends and ingredient usage by menu. Learned how analytics can reduce inventory waste while supporting reliable customer service.</p><p><strong>Role</strong> POS data cleaning · Sales trend analysis · Forecasting metrics and dashboard draft</p>` },
+        zh: { title: '咖啡门店销售与需求预测', body: `<p><strong>项目目标</strong><br>了解各门店的销售趋势，预测不同饮品和时段的需求，并提出可用于原料采购与人员排班的指标。</p><p><strong>实施过程</strong></p><ul><li>按日期、时段、门店和饮品整理虚构 POS 销售数据</li><li>比较不同星期、天气及促销活动下的销量差异</li><li>估算美式咖啡、拿铁等主要饮品的高峰时段与原料需求</li></ul><p><strong>成果与收获</strong><br>提出展示小时销售趋势及各饮品原料用量的运营仪表盘初稿，学习如何通过数据分析减少库存浪费并支持稳定的顾客服务。</p><p><strong>负责内容</strong> POS 数据清洗 · 销售趋势分析 · 需求预测指标与仪表盘初稿</p>` }
       },
       service: {
-        ko: { title: '친환경 구독 서비스 기획', body: `<p><strong>목표</strong><br>첫 구매 이후 고객의 재구독을 돕는 서비스 개선 방향을 도출했습니다.</p><p><strong>진행 과정</strong></p><ul><li>가상의 고객 설문 응답과 구매 이력 데이터 분석</li><li>가입·첫 배송·재구독 단계별 이탈 요인 정리</li><li>고객군별 알림 시점 및 상품 구성 개선안 설계</li></ul><p><strong>결과 및 배운 점</strong><br>고객이 구독을 중단하는 이유를 가격, 배송 주기, 상품 적합성으로 분류하고 선택형 배송 주기와 취향 기반 추천을 제안했습니다.</p><p><strong>담당 역할</strong> 고객 여정 분석 · SQL 기초 조회 · 서비스 제안서 작성</p>` },
-        en: { title: 'Eco-friendly Subscription Service Planning', body: `<p><strong>Objective</strong><br>Identify service improvements that encourage customers to renew after their first purchase.</p><p><strong>Process</strong></p><ul><li>Analyzed fictional customer survey responses and purchase histories</li><li>Mapped drop-off factors across sign-up, first delivery, and renewal</li><li>Designed notification timing and product mix improvements for customer segments</li></ul><p><strong>Outcome & Learning</strong><br>Grouped cancellation reasons into price, delivery frequency, and product fit, then proposed flexible delivery schedules and preference-based recommendations.</p><p><strong>Role</strong> Customer journey analysis · Basic SQL queries · Service proposal</p>` },
-        zh: { title: '环保订阅服务策划', body: `<p><strong>项目目标</strong><br>提出服务优化方向，帮助客户在首次购买后继续订阅。</p><p><strong>实施过程</strong></p><ul><li>分析模拟客户问卷回答与购买历史数据</li><li>梳理注册、首次配送、续订各阶段的流失原因</li><li>设计面向不同客户群体的通知时机与商品组合优化方案</li></ul><p><strong>成果与收获</strong><br>将客户停止订阅的原因归纳为价格、配送周期和商品适配度，并提出可选配送周期及基于偏好的推荐方案。</p><p><strong>负责内容</strong> 客户旅程分析 · SQL基础查询 · 服务提案撰写</p>` }
+        ko: { title: '커피 멤버십 및 고객 충성도 프로그램 기획', body: `<p><strong>목표</strong><br>고객의 재방문과 재구매를 높일 수 있도록 Sunshine의 가상 멤버십 경험과 리워드 구조를 개선하는 방안을 제안했습니다.</p><p><strong>진행 과정</strong></p><ul><li>가상의 구매 이력과 고객 설문을 활용해 방문 빈도 및 선호 메뉴 분석</li><li>첫 방문·반복 방문·휴면 고객 단계별 이용 장벽 정리</li><li>스탬프 적립, 생일 쿠폰, 취향 기반 추천 등 혜택 시나리오 비교</li></ul><p><strong>결과 및 배운 점</strong><br>고객 유형별 맞춤 혜택과 재방문 유도 메시지를 제안하고, 가입률·쿠폰 사용률·재방문율을 핵심 성과 지표로 정의했습니다. 고객 데이터가 관계 형성과 브랜드 충성도에 기여하는 방식을 이해했습니다.</p><p><strong>담당 역할</strong> 고객 여정 분석 · 세그먼트 도출 · 멤버십 서비스 제안서 작성</p>` },
+        en: { title: 'Coffee Membership & Customer Loyalty Program', body: `<p><strong>Objective</strong><br>Recommend improvements to Sunshine’s fictional membership experience and rewards structure to encourage repeat visits and purchases.</p><p><strong>Process</strong></p><ul><li>Analyzed fictional purchase histories and customer surveys to understand visit frequency and menu preferences</li><li>Mapped barriers across first-time, repeat, and lapsed customer stages</li><li>Compared reward scenarios such as stamp collection, birthday coupons, and preference-based recommendations</li></ul><p><strong>Outcome & Learning</strong><br>Proposed tailored benefits and re-engagement messages by customer segment, with enrollment, coupon redemption, and repeat-visit rates as key metrics. Explored how customer data can strengthen relationships and brand loyalty.</p><p><strong>Role</strong> Customer journey analysis · Segmentation · Membership proposal</p>` },
+        zh: { title: '咖啡会员体系与客户忠诚度计划', body: `<p><strong>项目目标</strong><br>优化虚构咖啡品牌 Sunshine 的会员体验与奖励机制，促进顾客再次到店和重复购买。</p><p><strong>实施过程</strong></p><ul><li>利用虚构购买记录和顾客问卷分析到店频率及饮品偏好</li><li>梳理首次到店、重复到店及沉睡客户各阶段的使用障碍</li><li>比较集点兑换、生日优惠券和偏好推荐等权益方案</li></ul><p><strong>成果与收获</strong><br>提出按客户类型定制的权益和召回信息，并将会员注册率、优惠券使用率及重复到店率设为核心指标，理解客户数据如何帮助建立关系与品牌忠诚度。</p><p><strong>负责内容</strong> 客户旅程分析 · 客户分群 · 会员服务提案</p>` }
       },
       solar: {
-        ko: { title: '지역 태양광 입지 탐색', body: `<p><strong>목표</strong><br>공개된 지역 데이터를 조합해 태양광 설비 후보지를 검토하는 기초 분석 틀을 만들었습니다.</p><p><strong>진행 과정</strong></p><ul><li>일사량, 건물 밀도, 접근성 관련 공개 지표 조사</li><li>지표 단위와 기준을 통일해 비교표 작성</li><li>후보 지역별 장점·제약 요인을 요약</li></ul><p><strong>결과 및 배운 점</strong><br>단일 지표만으로 입지를 판단하기 어렵다는 점을 확인하고, 현장 조사와 경제성 검토가 함께 필요하다는 후속 과제를 제시했습니다.</p><p><strong>담당 역할</strong> 데이터 수집 · 비교 분석 · 결과 발표</p>` },
-        en: { title: 'Regional Solar Site Exploration', body: `<p><strong>Objective</strong><br>Build a preliminary framework for evaluating solar facility locations using public regional data.</p><p><strong>Process</strong></p><ul><li>Researched public indicators for solar irradiation, building density, and accessibility</li><li>Standardized units and criteria to create a comparison table</li><li>Summarized the strengths and constraints of candidate areas</li></ul><p><strong>Outcome & Learning</strong><br>Recognized that site selection cannot rely on a single metric and recommended follow-up field research and financial feasibility reviews.</p><p><strong>Role</strong> Data collection · Comparative analysis · Presentation</p>` },
-        zh: { title: '区域太阳能选址研究', body: `<p><strong>项目目标</strong><br>整合公开地区数据，建立用于初步评估太阳能设施候选地点的分析框架。</p><p><strong>实施过程</strong></p><ul><li>调研日照量、建筑密度及交通可达性等公开指标</li><li>统一指标单位与标准，制作对比表</li><li>总结各候选区域的优势与限制因素</li></ul><p><strong>成果与收获</strong><br>认识到仅凭单一指标难以判断选址，并提出后续还需结合现场调查与经济性评估。</p><p><strong>负责内容</strong> 数据收集 · 对比分析 · 成果展示</p>` }
+        ko: { title: '시즌 메뉴 수익성 및 상품 구성 분석', body: `<p><strong>목표</strong><br>계절 한정 음료 후보의 판매 가능성과 수익성을 비교해 고객 선호와 매장 운영 효율을 함께 고려한 메뉴 구성을 제안했습니다.</p><p><strong>진행 과정</strong></p><ul><li>가상의 메뉴별 판매량, 판매가, 원재료비 데이터를 정리</li><li>음료별 매출·원가·매출총이익률을 계산해 비교</li><li>제조 난이도와 재료 공용 가능성을 고려해 시즌 메뉴 조합 검토</li></ul><p><strong>결과 및 배운 점</strong><br>고객 선호도가 높으면서 마진과 제조 효율을 확보할 수 있는 메뉴 조합을 제안했습니다. 상품 기획에서는 매력적인 콘셉트뿐 아니라 원가 구조와 현장 운영 가능성을 함께 살펴야 함을 배웠습니다.</p><p><strong>담당 역할</strong> 메뉴 데이터 정리 · 원가 및 수익성 분석 · 시즌 메뉴 제안</p>` },
+        en: { title: 'Seasonal Menu Profitability & Product Mix Analysis', body: `<p><strong>Objective</strong><br>Compare the sales potential and profitability of seasonal drink concepts and recommend a menu mix that balances customer appeal with store efficiency.</p><p><strong>Process</strong></p><ul><li>Organized fictional menu-level sales, price, and ingredient-cost data</li><li>Calculated and compared revenue, cost, and gross margin by drink</li><li>Reviewed seasonal combinations based on preparation complexity and ingredient sharing</li></ul><p><strong>Outcome & Learning</strong><br>Recommended a menu combination designed to balance customer preference, margin, and preparation efficiency. Learned that product planning must consider cost structure and operational feasibility as well as a compelling concept.</p><p><strong>Role</strong> Menu data preparation · Cost and profitability analysis · Seasonal menu recommendation</p>` },
+        zh: { title: '季节限定菜单盈利能力与产品组合分析', body: `<p><strong>项目目标</strong><br>比较季节限定饮品方案的销售潜力与盈利能力，提出兼顾顾客喜好和门店运营效率的菜单组合。</p><p><strong>实施过程</strong></p><ul><li>整理虚构的各饮品销量、售价及原材料成本数据</li><li>计算并比较各饮品的销售额、成本和毛利率</li><li>结合制作难度及原料共用情况评估季节菜单组合</li></ul><p><strong>成果与收获</strong><br>提出兼顾顾客偏好、利润空间和制作效率的菜单组合。认识到产品策划除了吸引人的概念，也必须考虑成本结构与实际运营可行性。</p><p><strong>负责内容</strong> 菜单数据整理 · 成本与盈利分析 · 季节菜单建议</p>` }
       }
     };
     const modal = document.getElementById('projectModal');
